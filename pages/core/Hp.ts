@@ -1,5 +1,9 @@
 import { Store } from "redux";
+import { initialDataState, setValue } from "../store/Data";
+import { initialViewState } from "../store/View";
 import { StoreStateType } from "../types/store";
+
+type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
 
 /** core 핵심단 여기서 dispatch하는 로직 추가해서 상태관리할 수 있게 끔 */
 class Hp {
@@ -19,6 +23,14 @@ class Hp {
     
     public get state(): StoreStateType {
         return this.store.getState();
+    }
+
+    public getValue(key: ValueType) {
+        return this.store.getState()['data'][key];
+    }
+
+    public setValue(key: ValueType, value: any): void {
+        this.store.dispatch(setValue({ [key]: value }));
     }
 }
 
