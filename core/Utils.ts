@@ -1,8 +1,12 @@
 /** 공통 함수 */
 class Utils {
     isMobile(): boolean {
-        const userAgent = navigator.userAgent;
-        return (['iPhone', 'Android'].includes(userAgent)) ? true : false;
+        if (typeof window !== 'undefined') {
+            const userAgent = navigator.userAgent;
+            if (['iPhone', 'Android'].includes(userAgent)) return true;
+        }
+        
+        return false;
     }
     sysdate(date: Date): string {
         const year = date.getFullYear();
