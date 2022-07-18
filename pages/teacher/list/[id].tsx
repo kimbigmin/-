@@ -275,7 +275,6 @@ const Button = styled.button`
   background-color: #66bb6a;
   color: white;
   max-width: 50rem;
-  margin-top: 1rem;
   padding: 1rem;
 
   &:hover {
