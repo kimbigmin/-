@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { CardBox } from "../../styles/Card";
-import { TopBar } from "../../styles/Topbar";
-import { Layout } from "../../styles/Layout";
+import { CardBox } from "../../../styles/Card";
+import { TopBar } from "../../../styles/TopBar";
+import { Layout } from "../../../styles/Layout";
 import styled from "styled-components";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
@@ -24,18 +24,24 @@ const Teacher_ListPage: NextPage = () => {
           </Link>
         </TopBar>
         <CardBox style={{ maxWidth: "60rem", width: "100%" }}>
-          <List>
-            <h3>1학년 7반</h3>
-            <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>
-          </List>
-          <List>
-            <h3>2학년 1반</h3>
-            <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>
-          </List>
-          <List>
-            <h3>즐거운 3-2반</h3>
-            <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>
-          </List>
+          <Link href={`/teacher/list/${"1-7"}`}>
+            <List>
+              <h3>1학년 7반</h3>
+              <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>
+            </List>
+          </Link>
+          <Link href={`/teacher/list/${"2-1"}`}>
+            <List>
+              <h3>2학년 1반</h3>
+              <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>
+            </List>
+          </Link>
+          <Link href={`/teacher/list/${"3-2"}`}>
+            <List>
+              <h3>즐거운 3-2반</h3>
+              <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>
+            </List>
+          </Link>
         </CardBox>
       </Layout>
     </>

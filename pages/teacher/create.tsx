@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { TopBar } from "../../styles/Topbar";
+import { TopBar } from "../../styles/TopBar";
 import { Layout } from "../../styles/Layout";
 import styled from "styled-components";
 import TextField from "@mui/material/TextField";
