@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Card, CardBox } from "../../styles/Card";
 
-const Student_MainPage: NextPage = () => {
+const Teacher_MainPage: NextPage = () => {
   return (
     <>
       <Head>
@@ -13,9 +13,9 @@ const Student_MainPage: NextPage = () => {
       </Head>
       <main>
         <CardBox>
-          <Link href="/student/result">
-            <Card url="https://images.unsplash.com/photo-1584415942461-0b87dda9cc2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
-              <h2>PAPS 측정 결과</h2>
+          <Link href="/teacher/list">
+            <Card url="https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80">
+              <h2>PAPS 측정 결과 입력</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
                 possimus facere amet nostrum cupiditate ea, atque temporibus
@@ -23,9 +23,9 @@ const Student_MainPage: NextPage = () => {
               </p>
             </Card>
           </Link>
-          <Link href="/student/analysis">
-            <Card url="https://images.unsplash.com/photo-1617602378661-9da776b6a807?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80">
-              <h2>분석 페이지</h2>
+          <Link href="/teacher/method">
+            <Card url="https://images.unsplash.com/photo-1618073194091-9b24230ddb2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+              <h2>PAPS 측정 방법</h2>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae,
                 soluta quam.
@@ -38,4 +38,4 @@ const Student_MainPage: NextPage = () => {
   );
 };
 
-export default Student_MainPage;
+export default Teacher_MainPage;
