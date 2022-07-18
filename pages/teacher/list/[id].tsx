@@ -160,16 +160,18 @@ const Teacher_ClassPage: NextPage = () => {
             </table>
           </MovedCol>
         </FormContainer>
-        <Button>저장하기</Button>
-        <Button
-          style={{
-            backgroundColor: "white",
-            color: "#66bb6a",
-            border: "1px solid #66bb6a",
-          }}
-        >
-          엑셀로 내보내기
-        </Button>
+        <ButtonBox>
+          <Button>저장하기</Button>
+          <Button
+            style={{
+              backgroundColor: "white",
+              color: "#66bb6a",
+              border: "1px solid #66bb6a",
+            }}
+          >
+            엑셀로 내보내기
+          </Button>
+        </ButtonBox>
       </Layout>
     </>
   );
@@ -253,15 +255,25 @@ const MovedCol = styled.div`
   }
 `;
 
+const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 20;
+  width: 100%;
+  background-color: white;
+  max-width: 40rem;
+`;
+
 const Button = styled.button`
   text-align: center;
   border: 0;
-  width: 100%;
+  width: 80%;
   font-size: 1rem;
   font-weight: 600;
   background-color: #66bb6a;
   color: white;
-  border-radius: 5px;
   max-width: 50rem;
   margin-top: 1rem;
   padding: 1rem;
