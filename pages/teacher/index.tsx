@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Card, CardBox } from "../../styles/Card";
 
+/** 선생님 로그인 후 메인 페이지 **/
 const Teacher_MainPage: NextPage = () => {
   return (
     <>
