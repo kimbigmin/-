@@ -38,6 +38,7 @@ const Home: NextPage = () => {
 };
 
 // 추후 재사용을 위한 style 컴포넌트 디렉토리로 따로 관리 => 스타일 파일은 어떻게 관리할 지 나중에 얘기
+
 const Main = styled.main`
   min-height: 100vh;
   padding: 4rem 0;
@@ -46,6 +47,10 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h1 {
+    color: #338a3e;
+  }
 `;
 
 const Button = styled.button`
