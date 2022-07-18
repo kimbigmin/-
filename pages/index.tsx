@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
+import logo from "../public/healthpaps_logo.png";
 
 const Home: NextPage = () => {
   return (
@@ -14,10 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Main>
-        <h1>Health PAPS</h1>
-
-        <p>체력측정의 새로운 기준을 제시하다.</p>
-
+        <Image src={logo} alt="logo"></Image>
         <LoginBtnBox>
           <Link href="/student">
             <Button>
