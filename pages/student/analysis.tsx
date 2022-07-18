@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
+/** 학생 분석 페이지 **/
 const Student_AnalysisPage: NextPage = () => {
   return (
     <>

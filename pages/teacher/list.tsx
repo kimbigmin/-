@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
+/** 선생님이 관리하고 있는 반 리스트 페이지 (메인 페이지에서 측정 결과 입력 누르면 여기로 이동) **/
 const Teacher_ListPage: NextPage = () => {
   return (
     <>

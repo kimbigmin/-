@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
+/** 선생님 측정 방법 페이지 **/
 const Teacher_MethodPage: NextPage = () => {
   return (
     <>
