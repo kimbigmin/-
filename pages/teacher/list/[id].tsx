@@ -6,13 +6,104 @@ import { Layout } from "../../../styles/Layout";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import TextField from "@mui/material/TextField";
+import { useState, useMemo, useCallback } from "react";
 
 /** 학급 페이지 **/
 const Teacher_ClassPage: NextPage = () => {
   const router = useRouter();
 
-  // 렌더링 시범용
-  const studentNumber = 40;
+  // 렌더링 시범용 학생수
+  const studentNumber = 29;
+
+  const [clickedNav, setClickedNav] = useState("PAPS 기록");
+
+  const handleNavBar = useCallback((e: any) => {
+    setClickedNav(e.target.innerText);
+  }, []);
+
+  const nav = ["PAPS 기록", "가입 요청", "학생 관리"];
+
+  // 학급마다 측정 리스트(paps 리스트)가 달라짐 => 데이터 받아와서 해당 학급 측정 리스트로 렌더링
+  const papsList = [
+    "윗몸일으키기",
+    "악력",
+    "제자리멀리뛰기",
+    "왕복달리기",
+    "BMI",
+  ];
+
+  // 번호와 이름으로 구성된 고정된 테이블 => useMemo로 불필요한 리렌더링 방지
+  const fixedTable = useMemo(() => {
+    return Array(studentNumber)
+      .fill(null)
+      .map((_, idx): any => {
+        return (
+          <>
+            <tr>
+              <td>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  size="small"
+                  label="번호"
+                  InputLabelProps={{
+                    style: { fontSize: 12, textAlign: "center" },
+                  }}
+                  margin="dense"
+                  color="success"
+                />
+              </td>
+              <td>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  size="small"
+                  label="이름"
+                  InputLabelProps={{
+                    style: { fontSize: 12, textAlign: "center" },
+                  }}
+                  margin="dense"
+                  color="success"
+                />
+              </td>
+            </tr>
+          </>
+        );
+      });
+  }, [studentNumber]);
+
+  // PAPS 측정 종목으로 이루어진 동적인 테이블 => useMemo로 불필요한 리렌더링 방지
+  const movedTable = useMemo(() => {
+    return Array(studentNumber)
+      .fill(null)
+      .map((_, idx): any => {
+        return (
+          <>
+            <tr>
+              {[...papsList].map((el) => {
+                return (
+                  <>
+                    <td>
+                      <TextField
+                        id="outlined-basic"
+                        variant="outlined"
+                        size="small"
+                        label={el}
+                        InputLabelProps={{
+                          style: { fontSize: 12, textAlign: "center" },
+                        }}
+                        margin="dense"
+                        color="success"
+                      />
+                    </td>
+                  </>
+                );
+              })}
+            </tr>
+          </>
+        );
+      });
+  }, [studentNumber]);
 
   return (
     <>
@@ -27,9 +118,17 @@ const Teacher_ClassPage: NextPage = () => {
         </TopBar>
         <Nav>
           <ul>
-            <li className="selected">PAPS 기록지</li>
-            <li className="">가입 요청</li>
-            <li className="">학생 관리</li>
+            {nav.map((el, idx) => {
+              return (
+                <li
+                  key={idx}
+                  className={clickedNav === el ? "selected" : ""}
+                  onClick={handleNavBar}
+                >
+                  {el}
+                </li>
+              );
+            })}
           </ul>
         </Nav>
         <FormContainer>
@@ -37,126 +136,17 @@ const Teacher_ClassPage: NextPage = () => {
             <table>
               <th className="num">번호</th>
               <th className="name">이름</th>
-
-              {Array(studentNumber)
-                .fill(null)
-                .map((_, idx): any => {
-                  return (
-                    <>
-                      <tr>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="번호"
-                            InputLabelProps={{ style: { fontSize: 12 } }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="이름"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                      </tr>
-                    </>
-                  );
-                })}
+              <>{fixedTable}</>
             </table>
           </FixedCol>
           <MovedCol>
             <table>
-              <th>윗몸일으키기</th>
-              <th>악력</th>
-              <th>제자리멀리뛰기</th>
-              <th>왕복달리기</th>
-              <th>BMI</th>
-
-              {Array(studentNumber)
-                .fill(null)
-                .map((_, idx): any => {
-                  return (
-                    <>
-                      <tr>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="윗몸일으키기"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="악력"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="제자리멀리뛰기"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="왕복달리기"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="BMI"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                      </tr>
-                    </>
-                  );
-                })}
+              <>
+                {[...papsList].map((el) => (
+                  <th key={el}>{el}</th>
+                ))}
+              </>
+              <>{movedTable}</>
             </table>
           </MovedCol>
         </FormContainer>
@@ -198,7 +188,8 @@ const Nav = styled.nav`
   }
 `;
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
+  scrollbar-width: none;
   display: flex;
   width: 100%;
   max-width: 1000rem;
