@@ -5,14 +5,25 @@ import { TopBar } from "../../../styles/TopBar";
 import { Layout } from "../../../styles/Layout";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import TextField from "@mui/material/TextField";
+import { useState, useCallback } from "react";
+import Form from "../../../components/Form";
+import Register from "../../../components/Register";
+import StudentManage from "../../../components/StudentManage";
 
 /** 학급 페이지 **/
 const Teacher_ClassPage: NextPage = () => {
   const router = useRouter();
 
-  // 렌더링 시범용
-  const studentNumber = 40;
+  // 렌더링 시범용 학생수
+  const studentNumber = 29;
+
+  const [clickedNav, setClickedNav] = useState("PAPS 기록");
+
+  const navbar = ["PAPS 기록", "가입 요청", "학생 관리"];
+
+  const handleNavbar = useCallback((e: any) => {
+    setClickedNav(e.target.innerText);
+  }, []);
 
   return (
     <>
@@ -27,151 +38,40 @@ const Teacher_ClassPage: NextPage = () => {
         </TopBar>
         <Nav>
           <ul>
-            <li className="selected">PAPS 기록지</li>
-            <li className="">가입 요청</li>
-            <li className="">학생 관리</li>
+            {navbar.map((el, idx) => {
+              return (
+                <li
+                  key={idx}
+                  className={clickedNav === el ? "selected" : ""}
+                  onClick={handleNavbar}
+                >
+                  {el}
+                </li>
+              );
+            })}
           </ul>
         </Nav>
-        <FormContainer>
-          <FixedCol>
-            <table>
-              <th className="num">번호</th>
-              <th className="name">이름</th>
-
-              {Array(studentNumber)
-                .fill(null)
-                .map((_, idx): any => {
-                  return (
-                    <>
-                      <tr>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="번호"
-                            InputLabelProps={{ style: { fontSize: 12 } }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="이름"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                      </tr>
-                    </>
-                  );
-                })}
-            </table>
-          </FixedCol>
-          <MovedCol>
-            <table>
-              <th>윗몸일으키기</th>
-              <th>악력</th>
-              <th>제자리멀리뛰기</th>
-              <th>왕복달리기</th>
-              <th>BMI</th>
-
-              {Array(studentNumber)
-                .fill(null)
-                .map((_, idx): any => {
-                  return (
-                    <>
-                      <tr>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="윗몸일으키기"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="악력"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="제자리멀리뛰기"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="왕복달리기"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                        <td>
-                          <TextField
-                            id="outlined-basic"
-                            variant="outlined"
-                            size="small"
-                            label="BMI"
-                            InputLabelProps={{
-                              style: { fontSize: 12, textAlign: "center" },
-                            }}
-                            margin="dense"
-                            color="success"
-                          />
-                        </td>
-                      </tr>
-                    </>
-                  );
-                })}
-            </table>
-          </MovedCol>
-        </FormContainer>
-        <ButtonBox>
-          <Button>저장하기</Button>
-          <Button
-            style={{
-              backgroundColor: "white",
-              color: "#66bb6a",
-              border: "1px solid #66bb6a",
-            }}
-          >
-            엑셀로 내보내기
-          </Button>
-        </ButtonBox>
+        {clickedNav === "PAPS 기록" ? (
+          <>
+            <Form studentNum={studentNumber}></Form>
+            <ButtonBox>
+              <Button>저장하기</Button>
+              <Button
+                style={{
+                  backgroundColor: "white",
+                  color: "#66bb6a",
+                  border: "1px solid #66bb6a",
+                }}
+              >
+                엑셀로 내보내기
+              </Button>
+            </ButtonBox>
+          </>
+        ) : clickedNav === "가입 요청" ? (
+          <Register></Register>
+        ) : (
+          <StudentManage></StudentManage>
+        )}
       </Layout>
     </>
   );
@@ -181,6 +81,7 @@ const Nav = styled.nav`
   width: 100%;
   margin-bottom: 2rem;
   ul {
+    margin: 0;
     display: flex;
     justify-content: space-around;
     padding: 0;
@@ -195,63 +96,6 @@ const Nav = styled.nav`
 
   .selected {
     border-bottom: 3px solid #338a3e;
-  }
-`;
-
-const FormContainer = styled.div`
-  display: flex;
-  width: 100%;
-  max-width: 1000rem;
-  overflow: scroll;
-  margin-bottom: 2rem;
-`;
-
-const FixedCol = styled.div`
-  width: 75%;
-  position: sticky;
-  left: 0;
-  background-color: white;
-  z-index: 4;
-
-  th {
-    font-size: 0.7rem;
-  }
-
-  tr {
-    input {
-      font-size: 0.8rem;
-      text-align: center;
-    }
-  }
-
-  .num {
-    width: 30%;
-  }
-
-  .name {
-    width: 40%;
-  }
-`;
-
-const MovedCol = styled.div`
-  width: 100%;
-
-  table {
-    overflow: scroll;
-    width: 300%;
-  }
-
-  tr {
-    input {
-      font-size: 0.8rem;
-      text-align: center;
-    }
-  }
-
-  th {
-    font-size: 0.7rem;
-    position: sticky;
-    top: 0;
   }
 `;
 
