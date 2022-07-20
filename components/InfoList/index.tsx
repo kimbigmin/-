@@ -13,7 +13,7 @@ const InfoList = ({ src, name }: InfoListProps) => {
       <img src={src} alt="student"></img>
       <ul>
         <li className="name">{name}</li>
-        <li className="class">능곡중학교 3학년 2반</li>
+        <li className="class">능곡중학교 3학년 6반</li>
       </ul>
     </StudentInfo>
   );
