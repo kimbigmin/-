@@ -3,13 +3,13 @@ import styled from "styled-components";
 type CardProps = {
   url: string;
 };
-export const Card = styled.li`
+export const Card = styled.li<CardProps>`
   display: flex;
   width: 80%;
   padding: 1rem;
   margin-top: 3rem;
   max-width: 30rem;
-  background-image: url(${(props: CardProps): string => props.url});
+  background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
