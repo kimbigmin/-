@@ -36,11 +36,11 @@ export class Hp {
 
 // 서버사이드렌더링 떔에..
 // 렌더링 할때 초기에는 전역객체는 선언되지 않아 해당 변수를 참조할 수 없음
-let devhp;
+let devhp = new Hp();
 if (typeof window !== 'undefined') {
     // 개발자도구에서 debugger 안걸린 상태로도 값 확인 가능 
     // devhp._store.getState() ~ 
-    let devhp = (window as any).devhp = new Hp();
+    devhp = (window as any).devhp = new Hp();
 }
 
-export default devhp ? devhp : Hp;
+export default devhp;
