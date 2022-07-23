@@ -1,42 +1,49 @@
 {
   "teacher": [
     {
-      "id": "kim",
-      "class": [
-        "dffd"
-      ]
+      "id": "park123",
+      "name": "박지선",
+      "school": "한가람중학교"
+    },
+    {
+      "id": "cho123",
+      "name": "조수훈",
+      "school": "능곡중학교"
     }
   ],
   "class": [
     {
-      "{\"name\":\"1-7반\",\"number\":\"30\",\"school\":\"중학교\",\"grade\":3,\"endurance\":\"왕복오래달리기\",\"flexibility\":3,\"strength\":\"왕복오래달리기\",\"speediness\":2}": "",
-      "id": 1
-    },
-    {
-      "{\"id\":\"kim\",\"name\":\"1-7반\",\"number\":\"30\",\"school\":\"중학교\",\"grade\":3,\"endurance\":\"왕복오래달리기\",\"flexibility\":3,\"strength\":\"왕복오래달리기\",\"speediness\":2}": "",
-      "id": 2
-    },
-    {
+      "id": "park123",
       "name": "1-7반",
       "number": "30",
       "school": "중학교",
-      "grade": 3,
-      "endurance": "왕복오래달리기",
-      "flexibility": 3,
+      "grade": 1,
+      "endurance": "윗몸일으키기",
+      "flexibility": "악력",
       "strength": "왕복오래달리기",
-      "speediness": 2,
-      "id": 3
+      "speediness": "제자리멀리뛰기"
     },
     {
-      "id": "kim",
-      "name": "1-7반",
-      "number": "30",
+      "id": "park123",
+      "name": "3-7반",
+      "number": "35",
       "school": "중학교",
       "grade": 3,
-      "endurance": "왕복오래달리기",
-      "flexibility": 3,
+      "endurance": "윗몸일으키기",
+      "flexibility": "악력",
       "strength": "왕복오래달리기",
-      "speediness": 2
+      "speediness": "제자리멀리뛰기"
+    },
+    {
+      "id": "cho123",
+      "name": "2-6반",
+      "number": "40",
+      "school": "중학교",
+      "grade": 2,
+      "endurance": "제자리멀리뛰기",
+      "flexibility": "악력",
+      "strength": "왕복오래달리기",
+      "speediness": "윗몸일으키기"
     }
   ]
 }
