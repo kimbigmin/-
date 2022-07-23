@@ -16,7 +16,9 @@ export type StoreStateViewType = {
         type?: 'S' | 'T' // S(Student), T(Teacher)
     },
     showAlertMessage: string,
-    showAlertOptions: ShowAlertOptionType
+    showAlertOptions: ShowAlertOptionType,
+    showLoadingName: string,
+    showLoadingOptions: ShowLodingOptionType
 }
 
 export type StoreStateType = {
@@ -24,10 +26,19 @@ export type StoreStateType = {
     view: StoreStateViewType
 }
 
+
+// Option Types
 export type ShowAlertOptionType = {
-    type: 'alert' | 'confirmAlert' // default = 'alert'
-    titleLabel?: string
-    confirmLabel?: string
-    cancelLabel?: string
-    closeHandler?: Function
+    type: 'alert' | 'confirmAlert'
+    title?: string
+    confirm?: string
+    cancel?: string
+    callbackFunc?: Function
+}
+
+export type ShowLodingOptionType = {
+    color?: 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning',
+    disableShrink?: boolean,
+    size?: number | string,
+    thickness?: number
 }
