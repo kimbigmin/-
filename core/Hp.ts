@@ -75,6 +75,12 @@ export class Hp {
         messages.map((message)=> console.log(message));
         console.groupEnd();
     }
+
+    public timeLog(message: any, func: Function) {
+        console.time(message);
+        func();
+        console.timeEnd(message);
+    }
 }
 
 // 서버사이드렌더링 떔에..
