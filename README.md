@@ -19,6 +19,7 @@ hp.setState('isLogin', false); // false
 ```
 
 <br/>
+
 📌 alert 
 ```
 hp.alert('내용', 옵션);
