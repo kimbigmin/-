@@ -50,12 +50,10 @@ const Teacher_CreatePage: NextPage = () => {
   };
 
   const handleButton = async () => {
-    const res = await axios.post(
-      `http://localhost:4000/teachers/kim`,
-      JSON.stringify(selectedItems)
-    );
-
-    console.log(res);
+    const res = await axios.post(`http://localhost:4000/class`, {
+      id: "kim",
+      ...selectedItems,
+    });
   };
 
   return (
