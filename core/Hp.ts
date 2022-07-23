@@ -72,9 +72,7 @@ export class Hp {
 
     public groupLog(messages: Array<any>) {
         console.group();
-        messages.map((message)=> {
-            console.log(message);
-        })
+        messages.map((message)=> console.log(message));
         console.groupEnd();
     }
 }
