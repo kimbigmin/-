@@ -22,12 +22,12 @@ hp.setState('isLogin', false); // false
 
 📌 alert 
 ```
-hp.alert('message', Options);
+hp.alert('message', Options?);
 ```
 
 ```
 ➡️ Options
-type: 'alert' | 'confirmAlert'
+type?: 'alert' | 'confirmAlert'
 title?: string
 confirm?: string
 cancel?: string
@@ -39,16 +39,16 @@ callbackFunc?: Function
 
 📌 loading 
 ```
-hp.showLoading('message', Options);
-hp.hideLoading(); // == hp.showLoading('hide')
+hp.showLoading('message', Options?);
+hp.hideLoading(); == hp.showLoading('hide');
 ```
 
 ```
 ➡️ Options
-color: 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'
-disableShrink: boolean
-size: number | string
-thickness: number
+color?: 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'
+disableShrink?: boolean
+size?: number | string
+thickness?: number
 ```
 
 ## 용어
