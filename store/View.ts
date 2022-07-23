@@ -44,7 +44,7 @@ const viewReducer = (state = initialViewState, action:{
             const alertOptions: any = {
                 type: (alertParam && alertParam.type) || 'alert',
                 titleLabel: (alertParam && alertParam.titleLabel) || '',
-                confirmLabel: (alertParam && alertParam.confirmLabel) || '11확인',
+                confirmLabel: (alertParam && alertParam.confirmLabel) || '확인',
                 cancelLabel: (alertParam && alertParam.cancelLabel) || '취소',
                 closeHandler: (alertParam && alertParam.closeHandler) || null,
             }
