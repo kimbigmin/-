@@ -55,10 +55,7 @@ function CustomTextField({label, pattern}: {label: string, pattern?: RegExp | ke
                     hp.warnLog(msg);
                 }
             }}
-
-        >
-
-        </TextField>
+        />
     )
 }
 
