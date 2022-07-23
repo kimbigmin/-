@@ -8,6 +8,7 @@ import data from '../store/Data';
 import view from '../store/View';
 import hp from '../core/Hp';
 import AlertManager from '../core/AlertManager';
+import LoadingManager from '../core/LoadingManager';
 import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -28,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Header />
         <div>
           <AlertManager/>
+          <LoadingManager/>
           <Component {...pageProps} />
         </div>
         <Footer />

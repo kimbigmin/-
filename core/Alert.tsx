@@ -21,7 +21,7 @@ const style = {
 };
 
 
-function AlertManager() {
+function Alert() {
     const refBtn = useRef<HTMLButtonElement>(null);
     let { showAlertMessage, showAlertOptions } = useSelector((state: StoreStateType) => {
         return {
@@ -41,21 +41,19 @@ function AlertManager() {
             <Modal
                 open={(showAlertMessage === '') ? false : true}
                 aria-labelledby="parent-modal-title"
-                aria-describedby="parent-modal-description">
+                aria-describedby="parent-modal-description"
+                color={(showAlertOptions.color)}>
                     
                 <Box sx={{ ...style, width: 400 }}>
-                    <h2 id="parent-modal-title">{(showAlertOptions?.titleLabel) ? showAlertOptions?.titleLabel : ''}</h2>
+                    <h2 id="parent-modal-title">{(showAlertOptions?.title) ? showAlertOptions.title : ''}</h2>
                     <p id="parent-modal-description">
                         {showAlertMessage}
                     </p>
 
                     <Button ref={refBtn} onClick={() => {
-                        // alert 종료 후 콜백
-                        if (showAlertOptions?.closeHandler) {
-                            showAlertOptions.closeHandler();
-                        }
                         hp.alert('hide');
-                    }}>{showAlertOptions.confirmLabel}</Button>
+                        if (showAlertOptions?.callbackFunc) showAlertOptions.callbackFunc();
+                    }}>{showAlertOptions.confirm}</Button>
                 </Box>
             </Modal>
             
@@ -63,4 +61,4 @@ function AlertManager() {
     );
 }
 
-export default AlertManager;
+export default Alert;

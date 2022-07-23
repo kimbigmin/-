@@ -1,7 +1,8 @@
+import { hideLoading } from './../store/View';
 import { Store } from "redux";
 import { initialDataState, setState } from "../store/Data";
-import { hideAlert, showAlert, initialViewState } from "../store/View";
-import { StoreStateType, ShowAlertOptionType } from "../types/store";
+import { hideAlert, showAlert, initialViewState, showLoading } from "../store/View";
+import { StoreStateType, ShowAlertOptionType, ShowLodingOptionType } from "../types/store";
 
 type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
 
@@ -33,22 +34,28 @@ export class Hp {
         this._store.dispatch(setState({ [key]: value }));
     }
 
-    public alert(message: string, options?: ShowAlertOptionType|Function) {
+    public alert(message: string, options?: ShowAlertOptionType) {
         if (message === 'hide') {
             this.store.dispatch(hideAlert());
         } else {
-            if (typeof options === 'function') {
-                options = {
-                    type: 'alert',
-                    closeHandler: options
-                }
-            }
-
             this.store.dispatch(showAlert({
                 message,
-                alertParam: options
+                alertOptions: options
             }))
         }
+    }
+
+    public showLoading(name: string, options?: ShowLodingOptionType) {
+        this.store.dispatch(showLoading({
+            loadingName: name,
+            loadingOptions: options
+        }))
+    }
+
+    public hideLoading(name: string) {
+        this.store.dispatch(hideLoading({
+            loadingName: name
+        }))
     }
 }
 
