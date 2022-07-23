@@ -1,0 +1,42 @@
+{
+  "teacher": [
+    {
+      "id": "kim",
+      "class": [
+        "dffd"
+      ]
+    }
+  ],
+  "class": [
+    {
+      "{\"name\":\"1-7반\",\"number\":\"30\",\"school\":\"중학교\",\"grade\":3,\"endurance\":\"왕복오래달리기\",\"flexibility\":3,\"strength\":\"왕복오래달리기\",\"speediness\":2}": "",
+      "id": 1
+    },
+    {
+      "{\"id\":\"kim\",\"name\":\"1-7반\",\"number\":\"30\",\"school\":\"중학교\",\"grade\":3,\"endurance\":\"왕복오래달리기\",\"flexibility\":3,\"strength\":\"왕복오래달리기\",\"speediness\":2}": "",
+      "id": 2
+    },
+    {
+      "name": "1-7반",
+      "number": "30",
+      "school": "중학교",
+      "grade": 3,
+      "endurance": "왕복오래달리기",
+      "flexibility": 3,
+      "strength": "왕복오래달리기",
+      "speediness": 2,
+      "id": 3
+    },
+    {
+      "id": "kim",
+      "name": "1-7반",
+      "number": "30",
+      "school": "중학교",
+      "grade": 3,
+      "endurance": "왕복오래달리기",
+      "flexibility": 3,
+      "strength": "왕복오래달리기",
+      "speediness": 2
+    }
+  ]
+}

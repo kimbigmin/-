@@ -10,6 +10,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import axios from "axios";
 
 interface IClass {
   name: string;
@@ -37,6 +38,7 @@ const Teacher_CreatePage: NextPage = () => {
 
   const [selectedItems, setSelectedItems] = useState(initialState);
 
+  console.log(selectedItems);
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setSelectedItems((current: IClass) => {
@@ -44,6 +46,13 @@ const Teacher_CreatePage: NextPage = () => {
         ...current,
         [name]: value,
       };
+    });
+  };
+
+  const handleButton = async () => {
+    const res = await axios.post(`http://localhost:4000/class`, {
+      id: "kim",
+      ...selectedItems,
     });
   };
 
@@ -255,7 +264,7 @@ const Teacher_CreatePage: NextPage = () => {
               </Select>
             </FormControl>
           </FormBox>
-          <button>생성하기</button>
+          <button onClick={handleButton}>생성하기</button>
         </FormContainer>
       </Layout>
     </>
