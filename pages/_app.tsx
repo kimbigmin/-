@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { Store } from 'redux';
+import logger from 'redux-logger'
 import type { AppProps } from "next/app";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -18,7 +19,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   })
 
   const store: Store = configureStore({
-    reducer: rootReducer
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => 
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(logger)
   })
 
   hp.init(store);

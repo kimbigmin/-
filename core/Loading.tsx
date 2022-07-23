@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import { StoreStateType } from '../types/store';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import hp from './Hp';
 
 function Loading() {
     let { showLoadingName, showLoadingOptions } = useSelector((state: StoreStateType) => {
