@@ -1,20 +1,20 @@
-import { createAction, ThunkDispatch } from '@reduxjs/toolkit';
-import { Dispatch } from 'redux';
+import { createAction } from '@reduxjs/toolkit';
+import { HYDRATE } from 'next-redux-wrapper';
 import { StoreStateDataType } from '../types/store';
 import Utils from "../core/Utils";
 
 // types
-const GET_VALUE="data/GET_VALUE";
-const SET_VALUE="data/SET_VALUE";
+const GET_STATE="data/GET_STATE";
+const SET_STATE="data/SET_STATE";
 
 // actions
-export const getValue = createAction<{
-    getValue: any
-}>(GET_VALUE)
+export const getState = createAction<{
+    getState: any
+}>(GET_STATE)
 
-export const setValue = createAction<{
+export const setState = createAction<{
     [key: string]:any
-}>(SET_VALUE)
+}>(SET_STATE)
 
 
 // reducer
@@ -25,7 +25,9 @@ export const initialDataState: StoreStateDataType = {
     isMobile: Utils.isMobile(),
     userInfo: {
         type: 'S' // 현재는 학생
-    }
+    },
+    title: 'Health-PAPS',
+    path: 'healthPaps'
 }
 
 const dataReducer = (state= initialDataState, action: {
@@ -33,12 +35,14 @@ const dataReducer = (state= initialDataState, action: {
     payload?: any
 }) => {
     switch (action.type) {
-        case SET_VALUE:
+        case HYDRATE:
+            return action.payload;
+        case GET_STATE:
             return {
                 ...state,
                 ...action.payload
             }
-        case GET_VALUE:
+        case SET_STATE:
             return {
                 ...state,
                 ...action.payload

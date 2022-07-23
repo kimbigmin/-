@@ -1,11 +1,10 @@
+import { hideLoading } from './../store/View';
 import { Store } from "redux";
-import { initialDataState, setValue } from "../store/Data";
-import { initialViewState } from "../store/View";
-import { StoreStateType } from "../types/store";
+import { initialDataState, setState } from "../store/Data";
+import { hideAlert, showAlert, initialViewState, showLoading } from "../store/View";
+import { StoreStateType, ShowAlertOptionType, ShowLodingOptionType } from "../types/store";
 
 type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
-
-/** core 핵심단 여기서 dispatch하는 로직 추가해서 상태관리할 수 있게 끔 */
 export class Hp {
     private _store!: Store;
     
@@ -25,12 +24,62 @@ export class Hp {
         return this.store.getState();
     }
     
-    public getValue(key: ValueType) {
+    public getState(key: ValueType) {
         return this._store.getState()['data'][key];
     }
 
-    public setValue(key: ValueType, value: any): void {
-        this._store.dispatch(setValue({ [key]: value }));
+    public setState(key: ValueType, value: any): void {
+        this._store.dispatch(setState(
+            {[key]: value }
+        ));
+    }
+
+    public alert(message: string, options?: ShowAlertOptionType) {
+        if (message === 'hide') {
+            this.store.dispatch(hideAlert());
+        } else {
+            this.store.dispatch(showAlert({
+                message,
+                alertOptions: options
+            }))
+        }
+    }
+
+    public showLoading(name: string, options?: ShowLodingOptionType) {
+        this.store.dispatch(showLoading({
+            loadingName: name,
+            loadingOptions: options
+        }))
+    }
+
+    public hideLoading(name: string) {
+        this.store.dispatch(hideLoading({
+            loadingName: name
+        }))
+    }
+
+    public log(message: any) {
+        console.log(message);
+    }
+
+    public warnLog(message: any) {
+        console.warn(message);
+    }
+
+    public infoLog(message: any) {
+        console.info(message);
+    }
+
+    public groupLog(messages: Array<any>) {
+        console.group();
+        messages.map((message)=> console.log(message));
+        console.groupEnd();
+    }
+
+    public timeLog(message: any, func: Function) {
+        console.time(message);
+        func();
+        console.timeEnd(message);
     }
 }
 

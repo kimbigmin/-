@@ -30,6 +30,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+# .env 추후 풀자
 
 # typescript
 *.tsbuildinfo
