@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useMemo } from "react";
 import TextField from "@mui/material/TextField";
+import CustomTextField from "../CustomTextField";
 
 type FormProps = {
   studentNum: number;
@@ -25,29 +26,15 @@ const Form = ({ studentNum }: FormProps) => {
           <>
             <tr>
               <td>
-                <TextField
-                  id="outlined-basic"
-                  variant="outlined"
-                  size="small"
+                <CustomTextField
                   label="번호"
-                  InputLabelProps={{
-                    style: { fontSize: 12, textAlign: "center" },
-                  }}
-                  margin="dense"
-                  color="success"
+                  pattern="onlyNum"
                 />
               </td>
               <td>
-                <TextField
-                  id="outlined-basic"
-                  variant="outlined"
-                  size="small"
+              <CustomTextField
                   label="이름"
-                  InputLabelProps={{
-                    style: { fontSize: 12, textAlign: "center" },
-                  }}
-                  margin="dense"
-                  color="success"
+                  pattern="onlyKor"
                 />
               </td>
             </tr>
@@ -68,16 +55,9 @@ const Form = ({ studentNum }: FormProps) => {
                 return (
                   <>
                     <td>
-                      <TextField
-                        id="outlined-basic"
-                        variant="outlined"
-                        size="small"
+                      <CustomTextField
                         label={el}
-                        InputLabelProps={{
-                          style: { fontSize: 12, textAlign: "center" },
-                        }}
-                        margin="dense"
-                        color="success"
+                        pattern="onlyNumDot"
                       />
                     </td>
                   </>
