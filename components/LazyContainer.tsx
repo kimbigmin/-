@@ -1,7 +1,7 @@
 import SuspenseLoading from './SuspenseLoading';
 import React, { Suspense } from 'react';
 
-function LazyContainer({compURL}: {compURL: string}) {
+function LazyContainer() {
     const LazyComp = React.lazy(() => import(`../pages/index`));
     return (
         <div>
