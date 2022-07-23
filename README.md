@@ -1,3 +1,18 @@
-## Getting Started
-📌hp = Helth Paps 줄여서 그냥 코드상으로 나타냄 (더 나은게 있다 싶으면 막 바꿔도됨)
+## 공통
+```
+📌 Helth Paps 상태관리
+hp.store.getState();
+```
+
+📌 state 값 조회
+```
+hp.getState('isLogin'); // true
+```
+
+📌 state 값 변경
+```
+hp.setState('isLogin', false); 
+```
+## 용어
+hp = Helth Paps
 
