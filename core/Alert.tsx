@@ -21,7 +21,7 @@ const style = {
 };
 
 
-function AlertManager() {
+function Alert() {
     const refBtn = useRef<HTMLButtonElement>(null);
     let { showAlertMessage, showAlertOptions } = useSelector((state: StoreStateType) => {
         return {
@@ -61,4 +61,4 @@ function AlertManager() {
     );
 }
 
-export default AlertManager;
+export default Alert;

@@ -2,9 +2,9 @@ import { useSelector } from 'react-redux';
 import { StoreStateType } from '../types/store';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import hp from '../core/Hp';
+import hp from './Hp';
 
-function LoadingManager() {
+function Loading() {
     let { showLoadingName, showLoadingOptions } = useSelector((state: StoreStateType) => {
         return {
             showLoadingName: state.view.showLoadingName,
@@ -36,4 +36,4 @@ function LoadingManager() {
     )
 }
 
-export default LoadingManager;
+export default Loading;
