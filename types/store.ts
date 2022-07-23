@@ -30,15 +30,16 @@ export type StoreStateType = {
 // Option Types
 export type ShowAlertOptionType = {
     type: 'alert' | 'confirmAlert'
-    title?: string
-    confirm?: string
-    cancel?: string
-    callbackFunc?: Function
+    title: string
+    confirm: string
+    cancel: string
+    color: 'error' | 'info' | 'success' | 'warning' | string
+    callbackFunc: Function
 }
 
 export type ShowLodingOptionType = {
-    color?: 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning',
-    disableShrink?: boolean,
-    size?: number | string,
-    thickness?: number
+    color: 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning',
+    disableShrink: boolean,
+    size: number | string,
+    thickness: number
 }

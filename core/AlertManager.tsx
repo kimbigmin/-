@@ -41,7 +41,8 @@ function AlertManager() {
             <Modal
                 open={(showAlertMessage === '') ? false : true}
                 aria-labelledby="parent-modal-title"
-                aria-describedby="parent-modal-description">
+                aria-describedby="parent-modal-description"
+                color={(showAlertOptions.color)}>
                     
                 <Box sx={{ ...style, width: 400 }}>
                     <h2 id="parent-modal-title">{(showAlertOptions?.title) ? showAlertOptions.title : ''}</h2>
