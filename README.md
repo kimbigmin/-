@@ -21,6 +21,7 @@ hp.setState('isLogin', false); // false
 ```
 hp.alert('내용', 옵션);
 ```
+
 ```
 옵션
 type: 'alert' | 'confirmAlert' // default = 'alert'
