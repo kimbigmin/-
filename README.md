@@ -22,11 +22,11 @@ hp.setState('isLogin', false); // false
 
 📌 alert 
 ```
-hp.alert('내용', 옵션);
+hp.alert('message', Options);
 ```
 
 ```
-옵션
+➡️ Options
 type: 'alert' | 'confirmAlert' // default = 'alert'
 titleLabel?: string
 confirmLabel?: string
