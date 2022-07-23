@@ -5,8 +5,6 @@ import { hideAlert, showAlert, initialViewState, showLoading } from "../store/Vi
 import { StoreStateType, ShowAlertOptionType, ShowLodingOptionType } from "../types/store";
 
 type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
-
-/** core 핵심단 여기서 dispatch하는 로직 추가해서 상태관리할 수 있게 끔 */
 export class Hp {
     private _store!: Store;
     
@@ -31,7 +29,9 @@ export class Hp {
     }
 
     public setState(key: ValueType, value: any): void {
-        this._store.dispatch(setState({ [key]: value }));
+        this._store.dispatch(setState(
+            {[key]: value }
+        ));
     }
 
     public alert(message: string, options?: ShowAlertOptionType) {
@@ -56,6 +56,26 @@ export class Hp {
         this.store.dispatch(hideLoading({
             loadingName: name
         }))
+    }
+
+    public log(message: any) {
+        console.log(message);
+    }
+
+    public warnLog(message: any) {
+        console.warn(message);
+    }
+
+    public infoLog(message: any) {
+        console.info(message);
+    }
+
+    public groupLog(messages: Array<any>) {
+        console.group();
+        messages.map((message)=> {
+            console.log(message);
+        })
+        console.groupEnd();
     }
 }
 
