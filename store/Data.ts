@@ -1,5 +1,5 @@
-import { createAction, ThunkDispatch } from '@reduxjs/toolkit';
-import { Dispatch } from 'redux';
+import { createAction } from '@reduxjs/toolkit';
+import { HYDRATE } from 'next-redux-wrapper';
 import { StoreStateDataType } from '../types/store';
 import Utils from "../core/Utils";
 
@@ -35,6 +35,8 @@ const dataReducer = (state= initialDataState, action: {
     payload?: any
 }) => {
     switch (action.type) {
+        case HYDRATE:
+            return action.payload;
         case GET_STATE:
             return {
                 ...state,

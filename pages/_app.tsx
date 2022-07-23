@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const store: Store = configureStore({
     reducer: rootReducer,
+    devTools: process.env.NODE_ENV === 'development', // 이 외에 정보 더 생기면 gitignore에 추가해서 푸쉬 안하도록 설정해야됨
     middleware: (getDefaultMiddleware) => 
     getDefaultMiddleware({
       serializableCheck: false,
