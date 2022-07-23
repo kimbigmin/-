@@ -1,7 +1,7 @@
 import { Store } from "redux";
 import { initialDataState, setValue } from "../store/Data";
-import { initialViewState } from "../store/View";
-import { StoreStateType } from "../types/store";
+import { hideAlert, showAlert, initialViewState } from "../store/View";
+import { StoreStateType, ShowAlertOptionType } from "../types/store";
 
 type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
 
@@ -31,6 +31,24 @@ export class Hp {
 
     public setValue(key: ValueType, value: any): void {
         this._store.dispatch(setValue({ [key]: value }));
+    }
+
+    public alert(message: string, options?: ShowAlertOptionType|Function) {
+        if (message === 'hide') {
+            this.store.dispatch(hideAlert());
+        } else {
+            if (typeof options === 'function') {
+                options = {
+                    type: 'alert',
+                    closeHandler: options
+                }
+            }
+
+            this.store.dispatch(showAlert({
+                message,
+                alertParam: options
+            }))
+        }
     }
 }
 

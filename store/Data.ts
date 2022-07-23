@@ -25,7 +25,9 @@ export const initialDataState: StoreStateDataType = {
     isMobile: Utils.isMobile(),
     userInfo: {
         type: 'S' // 현재는 학생
-    }
+    },
+    title: 'Health-PAPS',
+    path: 'healthPaps'
 }
 
 const dataReducer = (state= initialDataState, action: {

@@ -1,20 +1,19 @@
 import "../styles/globals.css";
 import { combineReducers } from "@reduxjs/toolkit";
 import { createStore, applyMiddleware, Store } from 'redux';
-import { HYDRATE } from "next-redux-wrapper";
 import type { AppProps } from "next/app";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import data from '../store/Data';
 import view from '../store/View';
-import queryString from "query-string";
 import hp from '../core/Hp';
+import AlertManager from '../core/AlertManager';
 import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const rootReducer = combineReducers({
     data,
-    view
+    view 
   })
 
   const store: Store = createStore(
@@ -27,7 +26,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Provider store={store}>
         <Header />
-        <Component {...pageProps} />
+        <div>
+          <AlertManager/>
+          <Component {...pageProps} />
+        </div>
         <Footer />
       </Provider>
     </>
