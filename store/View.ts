@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { Dispatch } from 'redux';
+import { HYDRATE } from 'next-redux-wrapper';
 import { StoreStateViewType, ShowAlertOptionType, ShowLodingOptionType } from '../types/store';
 
 // types
@@ -58,6 +58,8 @@ const viewReducer = (state = initialViewState, action:{
     payload: any
 }) => {
     switch(action.type) {
+        case HYDRATE:
+            return action.payload;
         case SHOW_ALERT:
             const alertParam: ShowAlertOptionType = action.payload.alertOptions;
             const alertOptions: ShowAlertOptionType = {
