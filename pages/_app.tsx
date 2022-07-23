@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
         <Footer />
       </Provider>
-    </>
+    </> 
   );
 }
 
