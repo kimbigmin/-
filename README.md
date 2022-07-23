@@ -5,12 +5,14 @@ hp.store.getState();
 ```
 
 <br/>
+
 📌 state 값 조회
 ```
 hp.getState('isLogin'); // true
 ```
 
 <br/>
+
 📌 state 값 변경
 ```
 hp.setState('isLogin', false); // false
