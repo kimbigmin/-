@@ -1,5 +1,5 @@
 import { Store } from "redux";
-import { initialDataState, setValue } from "../store/Data";
+import { initialDataState, setState } from "../store/Data";
 import { hideAlert, showAlert, initialViewState } from "../store/View";
 import { StoreStateType, ShowAlertOptionType } from "../types/store";
 
@@ -25,12 +25,12 @@ export class Hp {
         return this.store.getState();
     }
     
-    public getValue(key: ValueType) {
+    public getState(key: ValueType) {
         return this._store.getState()['data'][key];
     }
 
-    public setValue(key: ValueType, value: any): void {
-        this._store.dispatch(setValue({ [key]: value }));
+    public setState(key: ValueType, value: any): void {
+        this._store.dispatch(setState({ [key]: value }));
     }
 
     public alert(message: string, options?: ShowAlertOptionType|Function) {
