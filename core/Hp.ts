@@ -24,13 +24,13 @@ export class Hp {
         return this.store.getState();
     }
     
-    public getState(key: ValueType) {
-        return this._store.getState()['data'][key];
+    public getState(key: ValueType, type: string = 'data') {
+        return this._store.getState()[type][key];
     }
 
     public setState(key: ValueType, value: any): void {
         this._store.dispatch(setState(
-            {[key]: value }
+            {[key]: value}
         ));
     }
 
