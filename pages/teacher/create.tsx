@@ -39,6 +39,7 @@ const Teacher_CreatePage: NextPage = () => {
   const [selectedItems, setSelectedItems] = useState(initialState);
 
   console.log(selectedItems);
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setSelectedItems((current: IClass) => {
@@ -50,8 +51,11 @@ const Teacher_CreatePage: NextPage = () => {
   };
 
   const handleButton = async () => {
+    const newID = Math.random().toString(36).substr(2, 16);
+
     const res = await axios.post(`http://localhost:4000/class`, {
-      id: "kim",
+      teacherId: "park123",
+      classId: newID,
       ...selectedItems,
     });
   };
