@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useMemo } from "react";
 import TextField from "@mui/material/TextField";
-import CustomTextField from "../CustomTextField";
+import CustomTextField from "../Material/CustomTextField";
 
 type FormProps = {
   studentNum: number;

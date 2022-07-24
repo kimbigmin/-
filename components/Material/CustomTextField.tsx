@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 import { useState } from 'react';
-import hp from "../core/Hp";
+import hp from "../../core/Hp";
 
 type PatternType = {
     onlyNum: RegExp;

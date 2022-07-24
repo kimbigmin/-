@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import hp from './Hp';
+import hp from '../../core/Hp';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
-import { StoreStateType } from '../types/store';
+import { StoreStateType } from '../../types/store';
 
+// ㅇㅣ쁘게 디자인 하면 이뻐질듯
 const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 200,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -21,7 +22,7 @@ const style = {
 };
 
 
-function Alert() {
+function CustomAlert() {
     const refBtn = useRef<HTMLButtonElement>(null);
     let { showAlertMessage, showAlertOptions } = useSelector((state: StoreStateType) => {
         return {
@@ -44,7 +45,7 @@ function Alert() {
                 aria-describedby="parent-modal-description"
                 color={(showAlertOptions.color)}>
                     
-                <Box sx={{ ...style, width: 400 }}>
+                <Box sx={{ ...style, width: 300 }}>
                     <h2 id="parent-modal-title">{(showAlertOptions?.title) ? showAlertOptions.title : ''}</h2>
                     <p id="parent-modal-description">
                         {showAlertMessage}
@@ -61,4 +62,4 @@ function Alert() {
     );
 }
 
-export default Alert;
+export default CustomAlert;
