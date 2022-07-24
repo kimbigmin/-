@@ -1,4 +1,4 @@
-## 공통 API
+## HELATH PAPS API
 📌 상태관리
 ```
 hp.store.getState(); // data: 데이터 정보, view: 페이지 정보
@@ -26,7 +26,7 @@ hp.setState('isLogin', false); // false
 
 <br/>
 
-📌 alert 
+📌 alert
 ```
 hp.alert('message', Options?);
 ```
@@ -43,7 +43,7 @@ callbackFunc?: Function
 
 <br/>
 
-📌 loading 
+📌 loading
 ```
 hp.showLoading('message', Options?);
 hp.hideLoading(); == hp.showLoading('hide');
@@ -55,6 +55,13 @@ color?: 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'wa
 disableShrink?: boolean
 size?: number | string
 thickness?: number
+```
+
+<br/>
+
+📌 page 페이지 이동
+```
+hp.showPage(type: 'next' | 'prev);
 ```
 
 ## 협업
