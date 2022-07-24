@@ -27,8 +27,7 @@ export const hideLoading = createAction<{
 
 
 // reducer 
-const initAlertOptions: ShowAlertOptionType = {
-    type: 'alert',
+const initAlertOptions: ShowAlertOptionType = {    
     title: '',
     confirm: '확인',
     cancel: '취소',
@@ -63,7 +62,6 @@ const viewReducer = (state = initialViewState, action:{
         case SHOW_ALERT:
             const alertParam: ShowAlertOptionType = action.payload.alertOptions;
             const alertOptions: ShowAlertOptionType = {
-                type: (alertParam && alertParam.type) || 'alert',
                 title: (alertParam && alertParam.title) || '',
                 confirm: (alertParam && alertParam.confirm) || '확인',
                 cancel: (alertParam && alertParam.cancel) || '취소',

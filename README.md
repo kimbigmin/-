@@ -54,3 +54,11 @@ thickness?: number
 ## 용어
 hp = Helth Paps
 
+<br>
+
+## 논의
+📌 스타일 파일은 어떻게 관리할 지 나중에 얘기 (/index.tsx)
+
+📌 학생 결과 입력창 너무 작음 UI 수정 필요할듯 (Form/index.tsx)
+
+📌 footer가 필요한가... 갤럭시는 모르겠는데 아이폰 사파리 기준으로 뒤로가기든 앞으로가기든 다 구현되어있음

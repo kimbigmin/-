@@ -29,7 +29,6 @@ export type StoreStateType = {
 
 // Option Types
 export type ShowAlertOptionType = {
-    type: 'alert' | 'confirmAlert'
     title: string
     confirm: string
     cancel: string
