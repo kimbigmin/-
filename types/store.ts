@@ -31,7 +31,6 @@ export type StoreStateType = {
 export type ShowAlertOptionType = {
     title: string
     confirm: string
-    cancel: string
     color: 'error' | 'info' | 'success' | 'warning'
     callbackFunc: Function
 }
