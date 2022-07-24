@@ -8,8 +8,8 @@ import Footer from "../components/Footer";
 import data from '../store/Data';
 import view from '../store/View';
 import hp from '../core/Hp';
-import AlertManager from '../core/Alert';
-import LoadingManager from '../core/Loading';
+import CustomAlert from '../components/Material/CustomAlert';
+import CustomLoading from '../components/Material/CustomLoading';
 import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -34,8 +34,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Provider store={store}>
         <Header />
         <div>
-          <AlertManager/>
-          <LoadingManager/>
+          <CustomAlert/>
+          <CustomLoading/>
           <Component {...pageProps} />
         </div>
         <Footer />
