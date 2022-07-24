@@ -51,8 +51,9 @@ size?: number | string
 thickness?: number
 ```
 
-## 용어
+## 협업
 hp = Helth Paps
+main color = #66bb6a
 
 <br>
 
