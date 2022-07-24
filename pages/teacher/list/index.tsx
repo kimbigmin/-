@@ -36,7 +36,7 @@ const Teacher_ListPage: NextPage = () => {
     if (classList) {
       return classList.map((el, idx) => {
         return (
-          <Link key={el.id} href={`/teacher/list/${el.classId}`}>
+          <Link key={el.id} href={`/teacher/list/${el.id}`}>
             <List>
               <h3>{el.name}</h3>
               <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>

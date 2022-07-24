@@ -4,17 +4,17 @@ import Link from "next/link";
 import { TopBar } from "../../../styles/TopBar";
 import { Layout } from "../../../styles/Layout";
 import styled from "styled-components";
-import { useRouter } from "next/router";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Form from "../../../components/Form";
 import Register from "../../../components/Register";
 import StudentManage from "../../../components/StudentManage";
+import axios from "axios";
 
 /** 학급 페이지 **/
-const Teacher_ClassPage: NextPage = () => {
-  const router = useRouter();
 
+const Teacher_ClassPage: NextPage = ({ classData }: any) => {
   // 렌더링 시범용 학생수
+  console.log(classData);
   const studentNumber = 29;
 
   const [clickedNav, setClickedNav] = useState("PAPS 기록");
@@ -34,7 +34,7 @@ const Teacher_ClassPage: NextPage = () => {
       </Head>
       <Layout style={{ overflow: "scroll" }}>
         <TopBar>
-          <h2>{`${router.query.id} 페이지`}</h2>
+          <h2>{`${classData.name} 페이지`}</h2>
         </TopBar>
         <Nav>
           <ul>
@@ -53,7 +53,7 @@ const Teacher_ClassPage: NextPage = () => {
         </Nav>
         {clickedNav === "PAPS 기록" ? (
           <>
-            <Form studentNum={studentNumber}></Form>
+            <Form classData={classData}></Form>
             <ButtonBox>
               <Button>저장하기</Button>
               <Button
@@ -76,6 +76,44 @@ const Teacher_ClassPage: NextPage = () => {
     </>
   );
 };
+
+const getAllClassId = async () => {
+  const res = await axios.get("http://localhost:4000/class");
+  return res.data.map((classInfo: any) => {
+    return {
+      params: {
+        id: classInfo.id,
+      },
+    };
+  });
+};
+
+const getClassData = async (id: string) => {
+  const res = await axios.get(`http://localhost:4000/class/${id}`);
+  console.log(res);
+  return {
+    id,
+    ...res.data,
+  };
+};
+
+export async function getStaticPaths() {
+  const paths = await getAllClassId();
+  console.log(paths);
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const classData = await getClassData(params.id);
+  return {
+    props: {
+      classData,
+    },
+  };
+}
 
 const Nav = styled.nav`
   width: 100%;

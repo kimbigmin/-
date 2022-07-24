@@ -4,48 +4,42 @@ import TextField from "@mui/material/TextField";
 import CustomTextField from "../Material/CustomTextField";
 
 type FormProps = {
-  studentNum: number;
+  classData: any;
 };
 
-const Form = ({ studentNum }: FormProps) => {
+const Form = ({ classData }: FormProps) => {
   // 학급마다 측정 리스트(paps 리스트)가 달라짐 => 데이터 받아와서 해당 학급 측정 리스트로 렌더링
   const papsList = [
-    "윗몸일으키기",
-    "악력",
-    "제자리멀리뛰기",
-    "왕복달리기",
+    classData.endurance,
+    classData.flexibility,
+    classData.strength,
+    classData.speediness,
     "BMI",
   ];
 
   // 번호와 이름으로 구성된 고정된 테이블 => useMemo로 불필요한 리렌더링 방지
   const fixedTable = useMemo(() => {
-    return Array(studentNum)
+    return Array(+classData.number)
       .fill(null)
       .map((_, idx): any => {
         return (
           <>
             <tr>
               <td>
-                <CustomTextField
-                  label="번호"
-                  pattern="onlyNum"
-                />
+                <CustomTextField label="번호" pattern="onlyNum" />
               </td>
               <td>
-              <CustomTextField
-                  label="이름"
-                  pattern="onlyKor"
-                />
+                <CustomTextField label="이름" pattern="onlyKor" />
               </td>
             </tr>
           </>
         );
       });
-  }, [studentNum]);
+  }, [classData]);
 
   // PAPS 측정 종목으로 이루어진 동적인 테이블 => useMemo로 불필요한 리렌더링 방지
   const movedTable = useMemo(() => {
-    return Array(studentNum)
+    return Array(+classData.number)
       .fill(null)
       .map((_, idx): any => {
         return (
@@ -55,10 +49,7 @@ const Form = ({ studentNum }: FormProps) => {
                 return (
                   <>
                     <td>
-                      <CustomTextField
-                        label={el}
-                        pattern="onlyNumDot"
-                      />
+                      <CustomTextField label={el} pattern="onlyNumDot" />
                     </td>
                   </>
                 );
@@ -67,7 +58,7 @@ const Form = ({ studentNum }: FormProps) => {
           </>
         );
       });
-  }, [studentNum]);
+  }, [classData]);
 
   return (
     <FormContainer>
