@@ -42,9 +42,6 @@ const initLoadingOptions: ShowLodingOptionType = {
 }
 
 export const initialViewState: StoreStateViewType = {
-    pageInfo: {
-        title: '페이지 기입하기?'
-    },
     showAlertMessage: "",
     showAlertOptions: initAlertOptions,
     showLoadingName: "",

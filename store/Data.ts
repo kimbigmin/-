@@ -23,11 +23,9 @@ export const initialDataState: StoreStateDataType = {
     systime: Utils.systime(new Date()),
     isLogin: false,
     isMobile: Utils.isMobile(),
-    userInfo: {
-        type: 'S' // 현재는 학생
-    },
-    title: 'Health-PAPS',
-    path: 'healthPaps'
+    path: 'healthPaps',
+    pageTitle: "HEALTH PAPS",
+    pagePath: ""
 }
 
 const dataReducer = (state= initialDataState, action: {

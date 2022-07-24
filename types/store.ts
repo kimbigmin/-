@@ -3,18 +3,13 @@ export type StoreStateDataType = {
     systime: string
     isLogin: boolean
     isMobile: boolean
-    userInfo: {
-        type: 'S' | 'T' // S(Student), T(Teacher)
-    }
-    title: string
     path: string
+    userType?: 'S' | 'T'
+    pageTitle: string
+    pagePath: string
 }
 
 export type StoreStateViewType = {
-    pageInfo: {
-        title: string
-        type?: 'S' | 'T' // S(Student), T(Teacher)
-    },
     showAlertMessage: string
     showAlertOptions: ShowAlertOptionType
     showLoadingName: string
