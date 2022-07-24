@@ -58,6 +58,17 @@ export class Hp {
         }))
     }
 
+    public showPage(type: 'next' | 'prev') {
+        if (type === 'next') history.forward();
+        if (type === 'prev') {
+            if (history.state.url ==='/') {
+                this.warnLog('showPage: 홈에서는 이전 페이지로 이동이 불가능해요.');
+                return;
+            }
+            history.go(-1);
+        }
+    }
+
     public log(message: any) {
         console.log(message);
     }

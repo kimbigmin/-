@@ -54,42 +54,42 @@ function Header() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-        <MenuItem>
-            <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-            >
-            <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-            </Badge>
-            </IconButton>
-            <p>알림</p>
-        </MenuItem>
-        <MenuItem onClick={handleProfileMenuOpen}>
-            <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="primary-search-account-menu"
-                aria-haspopup="true"
-                color="inherit"
-            >
-            <AccountCircle />
-            </IconButton>
-            <p>마이페이지</p>
-        </MenuItem>
-        <MenuItem onClick={handleProfileMenuOpen}>
-            <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="primary-search-account-menu"
-                aria-haspopup="true"
-                color="inherit"
-            >
-            <AccountCircle />
-            </IconButton>
-            <p>로그아웃</p>
-        </MenuItem>
+            <MenuItem>
+                <IconButton
+                    size="large"
+                    aria-label="show 17 new notifications"
+                    color="inherit"
+                >
+                <Badge badgeContent={17} color="error">
+                    <NotificationsIcon />
+                </Badge>
+                </IconButton>
+                <p>알림</p>
+            </MenuItem>
+            <MenuItem onClick={handleProfileMenuOpen}>
+                <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="primary-search-account-menu"
+                    aria-haspopup="true"
+                    color="inherit"
+                >
+                <AccountCircle />
+                </IconButton>
+                <p>마이페이지</p>
+            </MenuItem>
+            <MenuItem onClick={handleProfileMenuOpen}>
+                <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="primary-search-account-menu"
+                    aria-haspopup="true"
+                    color="inherit"
+                >
+                <AccountCircle />
+                </IconButton>
+                <p>로그아웃</p>
+            </MenuItem>
         </Menu>
     );
 
