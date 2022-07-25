@@ -13,37 +13,52 @@
   ],
   "class": [
     {
-      "id": "park123",
-      "name": "1-7반",
-      "number": "30",
-      "school": "중학교",
-      "grade": 1,
-      "endurance": "윗몸일으키기",
-      "flexibility": "악력",
-      "strength": "왕복오래달리기",
-      "speediness": "제자리멀리뛰기"
-    },
-    {
-      "id": "park123",
-      "name": "3-7반",
-      "number": "35",
-      "school": "중학교",
-      "grade": 3,
-      "endurance": "윗몸일으키기",
-      "flexibility": "악력",
-      "strength": "왕복오래달리기",
-      "speediness": "제자리멀리뛰기"
-    },
-    {
       "id": "cho123",
       "name": "2-6반",
       "number": "40",
       "school": "중학교",
-      "grade": 2,
+      "grade": "2",
       "endurance": "제자리멀리뛰기",
       "flexibility": "악력",
       "strength": "왕복오래달리기",
       "speediness": "윗몸일으키기"
+    },
+    {
+      "id": "kim",
+      "name": "테스트용 ",
+      "number": "20",
+      "school": "중학교",
+      "grade": "3",
+      "endurance": "왕복오래달리기",
+      "flexibility": "왕복오래달리기",
+      "strength": "2",
+      "speediness": "3"
+    },
+    {
+      "teacherId": "park123",
+      "classId": "d84p71ogh0i",
+      "name": "1-7반",
+      "number": "21",
+      "school": "중학교",
+      "grade": "3",
+      "endurance": "왕복오래달리기",
+      "flexibility": "왕복오래달리기",
+      "strength": "왕복오래달리기",
+      "speediness": "왕복오래달리기",
+      "id": "WoGo6k2"
+    },
+    {
+      "teacherId": "park123",
+      "classId": "put0tl66v4",
+      "name": "테스트용 반",
+      "number": "5",
+      "school": "중학교",
+      "grade": "3",
+      "endurance": "왕복오래달리기",
+      "flexibility": "왕복오래달리기",
+      "strength": "악력",
+      "speediness": "왕복오래달리기",
+      "id": "kGP7v03"
     }
   ]
 }
