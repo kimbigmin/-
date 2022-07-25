@@ -58,7 +58,7 @@ export class Hp {
         }))
     }
 
-    public showPage(type: 'next' | 'prev') {
+    public showPage(type: 'next' | 'prev') { 
         if (type === 'next') history.forward();
         if (type === 'prev') {
             if (history.state.url ==='/') {
