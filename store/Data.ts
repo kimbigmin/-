@@ -1,21 +1,20 @@
 import { createAction } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 import { StoreStateDataType } from '../types/store';
-import Utils from "../core/Utils";
+import Utils from '../core/Utils';
 
 // types
-const GET_STATE="data/GET_STATE";
-const SET_STATE="data/SET_STATE";
+const GET_STATE = 'data/GET_STATE';
+const SET_STATE = 'data/SET_STATE';
 
 // actions
 export const getState = createAction<{
-    getState: any
-}>(GET_STATE)
+    getState: any;
+}>(GET_STATE);
 
 export const setState = createAction<{
-    [key: string]:any
-}>(SET_STATE)
-
+    [key: string]: any;
+}>(SET_STATE);
 
 // reducer
 export const initialDataState: StoreStateDataType = {
@@ -24,30 +23,33 @@ export const initialDataState: StoreStateDataType = {
     isLogin: false,
     isMobile: Utils.isMobile(),
     path: 'healthPaps',
-    pageTitle: "HEALTH PAPS",
-    pagePath: ""
-}
+    pageTitle: 'HEALTH PAPS',
+    pagePath: '',
+};
 
-const dataReducer = (state= initialDataState, action: {
-    type: string,
-    payload?: any
-}) => {
+const dataReducer = (
+    state = initialDataState,
+    action: {
+        type: string;
+        payload?: any;
+    },
+) => {
     switch (action.type) {
         case HYDRATE:
             return action.payload;
         case GET_STATE:
             return {
                 ...state,
-                ...action.payload
-            }
+                ...action.payload,
+            };
         case SET_STATE:
             return {
                 ...state,
-                ...action.payload
-            }
+                ...action.payload,
+            };
         default:
             return state;
     }
-}
+};
 
 export default dataReducer;
