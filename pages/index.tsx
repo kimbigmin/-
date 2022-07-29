@@ -9,12 +9,11 @@ import hp from '../core/Hp';
 
 const Home: NextPage = () => {
     const onClick = (e: React.MouseEvent<HTMLElement>) => {
-        const result = {
-            type:(e.currentTarget as HTMLInputElement).name
-        }
+        const type = (e.currentTarget as HTMLInputElement).name;
         
-        hp.setState('userInfo', result);
+        hp.setState('userType', type);
     }
+    
     return (
     <>
     <Main>

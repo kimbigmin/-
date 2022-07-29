@@ -24,13 +24,13 @@ export class Hp {
         return this.store.getState();
     }
     
-    public getState(key: ValueType) {
-        return this._store.getState()['data'][key];
+    public getState(key: ValueType, type: string = 'data') {
+        return this._store.getState()[type][key];
     }
 
     public setState(key: ValueType, value: any): void {
         this._store.dispatch(setState(
-            {[key]: value }
+            {[key]: value}
         ));
     }
 
@@ -56,6 +56,17 @@ export class Hp {
         this.store.dispatch(hideLoading({
             loadingName: name
         }))
+    }
+
+    public showPage(type: 'next' | 'prev') { 
+        if (type === 'next') history.forward();
+        if (type === 'prev') {
+            if (history.state.url ==='/') {
+                this.warnLog('showPage: 홈에서는 이전 페이지로 이동이 불가능해요.');
+                return;
+            }
+            history.go(-1);
+        }
     }
 
     public log(message: any) {

@@ -7,20 +7,25 @@ import Button from '@mui/material/Button';
 import { StoreStateType } from '../../types/store';
 
 // ㅇㅣ쁘게 디자인 하면 이뻐질듯
-const style = {
+const boxStyle = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 200,
+    height: 200,
     bgcolor: 'background.paper',
-    border: '2px solid #000',
+    border: '2px solid #66bb6a',
     boxShadow: 24,
     pt: 2,
     px: 4,
     pb: 3,
 };
 
+const btnStyle = {
+    position: 'absolute',
+    left: '60%',
+}
 
 function CustomAlert() {
     const refBtn = useRef<HTMLButtonElement>(null);
@@ -45,13 +50,13 @@ function CustomAlert() {
                 aria-describedby="parent-modal-description"
                 color={(showAlertOptions.color)}>
                     
-                <Box sx={{ ...style, width: 300 }}>
+                <Box sx={{ ...boxStyle, width: 300 }}>
                     <h2 id="parent-modal-title">{(showAlertOptions?.title) ? showAlertOptions.title : ''}</h2>
                     <p id="parent-modal-description">
                         {showAlertMessage}
                     </p>
 
-                    <Button ref={refBtn} onClick={() => {
+                    <Button sx={btnStyle} ref={refBtn} onClick={() => {
                         hp.alert('hide');
                         if (showAlertOptions?.callbackFunc) showAlertOptions.callbackFunc();
                     }}>{showAlertOptions.confirm}</Button>
