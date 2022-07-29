@@ -59,6 +59,32 @@
       "strength": "악력",
       "speediness": "왕복오래달리기",
       "id": "kGP7v03"
+    },
+    {
+      "teacherId": "park123",
+      "classId": "k0z4y42hl4",
+      "name": "2-1반",
+      "number": "10",
+      "school": "중학교",
+      "grade": 1,
+      "endurance": "왕복오래달리기",
+      "flexibility": "왕복오래달리기",
+      "strength": "왕복오래달리기",
+      "speediness": "왕복오래달리기",
+      "id": "p4CTLmT"
+    },
+    {
+      "teacherId": "park123",
+      "classId": "4lf699zo594",
+      "name": "1-2",
+      "number": "1",
+      "school": "중학교",
+      "grade": 3,
+      "endurance": "왕복오래달리기",
+      "flexibility": "왕복오래달리기",
+      "strength": "왕복오래달리기",
+      "speediness": "왕복오래달리기",
+      "id": "EGzsCwm"
     }
   ]
 }
