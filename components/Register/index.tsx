@@ -1,32 +1,47 @@
-import styled from "styled-components";
-import InfoList from "../InfoList";
+import styled from 'styled-components';
+import InfoList from '../InfoList';
 
-const Register = () => {
-  return (
-    <Container>
-      <h2>가입요청 목록</h2>
-      <ul>
-        <InfoList
-          src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
-          name="김민규"
-        ></InfoList>
-      </ul>
-    </Container>
-  );
+const Register = ({ pending }: any) => {
+    return (
+        <Container>
+            <h2>가입요청 목록</h2>
+            <ul>
+                {pending.length !== 0 ? (
+                    [...pending].map((student, idx) => {
+                        return (
+                            <InfoList
+                                src={student.imageUrl}
+                                name={student.name}
+                                key={idx}
+                            ></InfoList>
+                        );
+                    })
+                ) : (
+                    <h3>가입 요청이 없습니다.</h3>
+                )}
+            </ul>
+        </Container>
+    );
 };
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
-  ul {
-    padding: 0;
-  }
+    ul {
+        padding: 0;
+    }
 
-  h2 {
-    font-size: 1.1rem;
-  }
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        color: #808080af;
+        text-align: center;
+    }
 `;
 
 export default Register;
