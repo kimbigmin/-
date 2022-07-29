@@ -132,16 +132,16 @@ const Teacher_CreatePage: NextPage = () => {
                 onChange={handleChange}
                 label="grade"
               >
-                <MenuItem value={1}>1학년</MenuItem>
-                <MenuItem value={2}>2학년</MenuItem>
-                <MenuItem value={3}>3학년</MenuItem>
-                <MenuItem value={4} disabled={true}>
+                <MenuItem value={"1"}>1학년</MenuItem>
+                <MenuItem value={"2"}>2학년</MenuItem>
+                <MenuItem value={"3"}>3학년</MenuItem>
+                <MenuItem value={"4"} disabled={true}>
                   4학년
                 </MenuItem>
-                <MenuItem value={5} disabled={true}>
+                <MenuItem value={"5"} disabled={true}>
                   5학년
                 </MenuItem>
-                <MenuItem value={6} disabled={true}>
+                <MenuItem value={"6"} disabled={true}>
                   6학년
                 </MenuItem>
               </Select>
@@ -166,17 +166,8 @@ const Teacher_CreatePage: NextPage = () => {
                 label="endurance"
               >
                 <MenuItem value={"왕복오래달리기"}>왕복오래달리기</MenuItem>
-                <MenuItem value={2}>2학년</MenuItem>
-                <MenuItem value={3}>3학년</MenuItem>
-                <MenuItem value={4} disabled={true}>
-                  4학년
-                </MenuItem>
-                <MenuItem value={5} disabled={true}>
-                  5학년
-                </MenuItem>
-                <MenuItem value={6} disabled={true}>
-                  6학년
-                </MenuItem>
+                <MenuItem value={"오래달리기-걷기"}>오래달리기-걷기</MenuItem>
+                <MenuItem value={"스텝검사"}>스텝검사</MenuItem>
               </Select>
             </FormControl>
             <FormControl
@@ -195,18 +186,10 @@ const Teacher_CreatePage: NextPage = () => {
                 name="flexibility"
                 label="flexibility"
               >
-                <MenuItem value={"왕복오래달리기"}>왕복오래달리기</MenuItem>
-                <MenuItem value={2}>2학년</MenuItem>
-                <MenuItem value={3}>3학년</MenuItem>
-                <MenuItem value={4} disabled={true}>
-                  4학년
+                <MenuItem value={"앉아윗몸앞으로굽히기"}>
+                  앉아윗몸앞으로굽히기
                 </MenuItem>
-                <MenuItem value={5} disabled={true}>
-                  5학년
-                </MenuItem>
-                <MenuItem value={6} disabled={true}>
-                  6학년
-                </MenuItem>
+                <MenuItem value={"종합유연성검사"}>종합유연성검사</MenuItem>
               </Select>
             </FormControl>
             <FormControl
@@ -225,18 +208,9 @@ const Teacher_CreatePage: NextPage = () => {
                 name="strength"
                 label="strength"
               >
-                <MenuItem value={"왕복오래달리기"}>왕복오래달리기</MenuItem>
-                <MenuItem value={2}>2학년</MenuItem>
-                <MenuItem value={3}>3학년</MenuItem>
-                <MenuItem value={4} disabled={true}>
-                  4학년
-                </MenuItem>
-                <MenuItem value={5} disabled={true}>
-                  5학년
-                </MenuItem>
-                <MenuItem value={6} disabled={true}>
-                  6학년
-                </MenuItem>
+                <MenuItem value={"팔굽혀펴기"}>팔굽혀펴기</MenuItem>
+                <MenuItem value={"윗몸말아올리기"}>윗몸말아올리기</MenuItem>
+                <MenuItem value={"악력"}>악력</MenuItem>
               </Select>
             </FormControl>
             <FormControl
@@ -255,18 +229,8 @@ const Teacher_CreatePage: NextPage = () => {
                 name="speediness"
                 label="speediness"
               >
-                <MenuItem value={"왕복오래달리기"}>왕복오래달리기</MenuItem>
-                <MenuItem value={2}>2학년</MenuItem>
-                <MenuItem value={3}>3학년</MenuItem>
-                <MenuItem value={4} disabled={true}>
-                  4학년
-                </MenuItem>
-                <MenuItem value={5} disabled={true}>
-                  5학년
-                </MenuItem>
-                <MenuItem value={6} disabled={true}>
-                  6학년
-                </MenuItem>
+                <MenuItem value={"50미터달리기"}>50미터달리기</MenuItem>
+                <MenuItem value={"제자리멀리뛰기"}>제자리멀리뛰기</MenuItem>
               </Select>
             </FormControl>
           </FormBox>

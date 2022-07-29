@@ -85,6 +85,19 @@
       "strength": "왕복오래달리기",
       "speediness": "왕복오래달리기",
       "id": "EGzsCwm"
+    },
+    {
+      "teacherId": "park123",
+      "classId": "n29dko48q5",
+      "name": "test",
+      "number": "10",
+      "school": "중학교",
+      "grade": "3",
+      "endurance": "오래달리기-걷기",
+      "flexibility": "앉아윗몸앞으로굽히기",
+      "strength": "팔굽혀펴기",
+      "speediness": "제자리멀리뛰기",
+      "id": "puiXyTe"
     }
   ]
 }
