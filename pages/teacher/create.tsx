@@ -58,6 +58,8 @@ const Teacher_CreatePage: NextPage = () => {
       classId: newID,
       ...selectedItems,
     });
+
+    window.location.href = "http://localhost:3000/teacher/list";
   };
 
   return (
