@@ -12,6 +12,7 @@ const Register = ({ pending }: any) => {
                             <InfoList
                                 src={student.imageUrl}
                                 name={student.name}
+                                type="request"
                                 key={idx}
                             ></InfoList>
                         );
@@ -38,7 +39,7 @@ const Container = styled.div`
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: #808080af;
         text-align: center;
     }

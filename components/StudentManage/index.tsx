@@ -6,15 +6,19 @@ const StudentManage = ({ students }: any) => {
         <Container>
             <h2>학생 관리</h2>
             <ul>
-                {[...students].map((student, idx) => {
-                    return (
-                        <InfoList
-                            src={student.imageUrl}
-                            name={student.name}
-                            key={idx}
-                        ></InfoList>
-                    );
-                })}
+                {students.length !== 0 ? (
+                    [...students].map((student, idx) => {
+                        return (
+                            <InfoList
+                                src={student.imageUrl}
+                                name={student.name}
+                                key={idx}
+                            ></InfoList>
+                        );
+                    })
+                ) : (
+                    <h3>가입된 학생이 없습니다.</h3>
+                )}
             </ul>
         </Container>
     );
@@ -31,6 +35,12 @@ const Container = styled.div`
 
     h2 {
         font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+        color: #808080af;
+        text-align: center;
     }
 `;
 
