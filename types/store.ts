@@ -1,7 +1,6 @@
 export type StoreStateDataType = {
     sysdate: string
     systime: string
-    isLogin: boolean
     isMobile: boolean
     path: string
     userType?: 'S' | 'T'
@@ -16,9 +15,15 @@ export type StoreStateViewType = {
     showLoadingOptions: ShowLodingOptionType
 }
 
+export type StoreStateUserType = {
+    isLogin: boolean
+    name: string
+}
+
 export type StoreStateType = {
     data: StoreStateDataType
     view: StoreStateViewType
+    user: StoreStateUserType
 }
 
 

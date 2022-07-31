@@ -20,7 +20,6 @@ export const setState = createAction<{
 export const initialDataState: StoreStateDataType = {
     sysdate: Utils.sysdate(new Date()),
     systime: Utils.systime(new Date()),
-    isLogin: false,
     isMobile: Utils.isMobile(),
     path: 'healthPaps',
     pageTitle: 'HEALTH PAPS',
