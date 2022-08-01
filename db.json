@@ -120,7 +120,9 @@
             "flexibility": "앉아윗몸앞으로굽히기",
             "strength": "윗몸말아올리기",
             "speediness": "제자리멀리뛰기",
-            "id": "wHA0041"
+            "id": "wHA0041",
+            "pending": [],
+            "students": []
         },
         {
             "teacherId": "park123",

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-healthpaps-dev-172559-authRole",
+      "UnauthRoleArn": "arn:aws:iam::670347963124:role/amplify-healthpaps-dev-172559-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::670347963124:role/amplify-healthpaps-dev-172559-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-healthpaps-dev-172559-deployment",
+      "UnauthRoleName": "amplify-healthpaps-dev-172559-unauthRole",
+      "StackName": "amplify-healthpaps-dev-172559",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:670347963124:stack/amplify-healthpaps-dev-172559/92c21ea0-1173-11ed-b18f-0225687b4582",
+      "AmplifyAppId": "d26rp13yffbpol"
+    },
+    "categories": {
+      "auth": {
+        "healthpaps01c4d7cf": {}
+      }
+    }
+  }
+}
