@@ -1,7 +1,7 @@
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import hp from '../../core/Hp';
-import InputAdornment from '@mui/material/InputAdornment';
+import Standard from '../../core/Standard';
 
 type PatternType = {
     onlyNum: RegExp;
@@ -68,6 +68,10 @@ function CustomTextField({
             ? restrictMessages[pattern]
             : label;
     };
+
+    const standard = new Standard();
+
+    console.log(standard.bendingForward('17', '초6', '남'));
 
     return (
         <TextField

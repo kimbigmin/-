@@ -22,6 +22,7 @@ class Standard {
             return getGradeFromRecord(
                 record,
                 Range.longRunningAndWalking.man[grade],
+                true,
             );
         } else {
             return null;
@@ -83,7 +84,7 @@ class Standard {
     }
     // 50m 달리기 등급 구하기
     running50m(record: string, grade: Grade, gender: string) {
-        return getGradeFromRecord(record, Range.running50m.man[grade]);
+        return getGradeFromRecord(record, Range.running50m.man[grade], true);
     }
     // 제자리멀리뛰기 등급 구하기
     longJump(record: string, grade: Grade, gender: string) {
