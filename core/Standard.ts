@@ -111,7 +111,7 @@ const getGradeFromRecord = (
     record: string | number,
     range: number[],
     reverse?: boolean,
-): string => {
+) => {
     record = +record;
 
     if (reverse) {
