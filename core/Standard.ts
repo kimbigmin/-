@@ -12,23 +12,27 @@ type Grade =
     | '고3';
 
 class Standard {
-    // 왕복오래달리기 등급 구하기
-    roundRunning(record: string, grade: Grade, gender: string) {
-        return getGradeFromRecord(record, Range.roundRunning.man[grade]);
+    // ** 왕복오래달리기 등급 구하기 **
+    roundRunning(record: string, grade: Grade, gender: 'man' | 'woman') {
+        return getGradeFromRecord(record, Range.roundRunning[gender][grade]);
     }
-    // 오래달리기-걷기 등급 구하기
-    longRunningAndWalking(record: string, grade: Grade, gender: string) {
+    // ** 오래달리기-걷기 등급 구하기 **
+    longRunningAndWalking(
+        record: string,
+        grade: Grade,
+        gender: 'man' | 'woman',
+    ) {
         if (grade !== '초4') {
             return getGradeFromRecord(
                 record,
-                Range.longRunningAndWalking.man[grade],
+                Range.longRunningAndWalking[gender][grade],
                 true,
             );
         } else {
             return null;
         }
     }
-    // 스텝체크 등급 구하기
+    //  ** 스텝체크 등급 구하기 **
     stepCheck(record: string) {
         switch (true) {
             case +record <= 100 && +record >= 76.0:
@@ -43,15 +47,18 @@ class Standard {
                 return 'fifth';
         }
     }
-    // 앉아윗몸앞으로굽히기 등급 구하기
-    bendingForward(record: string, grade: Grade, gender: string) {
+    //  ** 앉아윗몸앞으로굽히기 등급 구하기 **
+    bendingForward(record: string, grade: Grade, gender: 'man' | 'woman') {
         if (grade !== '초4') {
-            return getGradeFromRecord(record, Range.bendingForward.man[grade]);
+            return getGradeFromRecord(
+                record,
+                Range.bendingForward[gender][grade],
+            );
         } else {
             return null;
         }
     }
-    // 종합유연성 등급 구하기
+    //  ** 종합유연성 등급 구하기 **
     totalFlex(record: string) {
         switch (record) {
             case '8':
@@ -66,29 +73,33 @@ class Standard {
                 return 'fifth';
         }
     }
-    // 팔굽혀펴기 등급 구하기
-    pushUps(record: string, grade: Grade, gender: string) {
+    //  ** 팔굽혀펴기 등급 구하기 **
+    pushUps(record: string, grade: Grade, gender: 'man' | 'woman') {
         if (grade !== '초4' && grade !== '초5' && grade !== '초6') {
-            return getGradeFromRecord(record, Range.pushUps.man[grade]);
+            return getGradeFromRecord(record, Range.pushUps[gender][grade]);
         } else {
             return null;
         }
     }
-    // 윗몸말아올리기 등급 구하기
-    upperBody(record: string, grade: Grade, gender: string) {
-        return getGradeFromRecord(record, Range.upperBody.man[grade]);
+    //  ** 윗몸말아올리기 등급 구하기 **
+    upperBody(record: string, grade: Grade, gender: 'man' | 'woman') {
+        return getGradeFromRecord(record, Range.upperBody[gender][grade]);
     }
-    // 악력 등급 구하기
-    grip(record: string, grade: Grade, gender: string) {
-        return getGradeFromRecord(record, Range.grip.man[grade]);
+    //  ** 악력 등급 구하기 **
+    grip(record: string, grade: Grade, gender: 'man' | 'woman') {
+        return getGradeFromRecord(record, Range.grip[gender][grade]);
     }
-    // 50m 달리기 등급 구하기
-    running50m(record: string, grade: Grade, gender: string) {
-        return getGradeFromRecord(record, Range.running50m.man[grade], true);
+    // **  50m 달리기 등급 구하기 **
+    running50m(record: string, grade: Grade, gender: 'man' | 'woman') {
+        return getGradeFromRecord(
+            record,
+            Range.running50m[gender][grade],
+            true,
+        );
     }
-    // 제자리멀리뛰기 등급 구하기
-    longJump(record: string, grade: Grade, gender: string) {
-        return getGradeFromRecord(record, Range.longJump.man[grade]);
+    //  ** 제자리멀리뛰기 등급 구하기 **
+    longJump(record: string, grade: Grade, gender: 'man' | 'woman') {
+        return getGradeFromRecord(record, Range.longJump[gender][grade]);
     }
 }
 
