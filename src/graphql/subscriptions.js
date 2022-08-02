@@ -1,234 +1,612 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlog = /* GraphQL */ `
-  subscription OnCreateBlog {
-    onCreateBlog {
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser {
+    onCreateUser {
       id
+      isTeacher
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateBlog = /* GraphQL */ `
-  subscription OnUpdateBlog {
-    onUpdateBlog {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteBlog = /* GraphQL */ `
-  subscription OnDeleteBlog {
-    onDeleteBlog {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost {
-    onCreatePost {
-      id
-      title
-      blog {
+      schoolName
+      email
+      image
+      classNum
+      sex
+      age
+      grade
+      school
+      record {
         id
+        endurance
+        flexibility
+        strength
+        speediness
+        createdAt
+        updatedAt
+      }
+      belong {
+        id
+        teacher {
+          id
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
+          createdAt
+          updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
         name
-        posts {
+        school
+        grade
+        endurance
+        flexibility
+        strength
+        speediness
+        pending {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
         updatedAt
+        userManagingId
+        classTeacherId
       }
-      comments {
+      managing {
         items {
-          id
-          content
-          createdAt
-          updatedAt
-          postCommentsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-      blogPostsId
-    }
-  }
-`;
-export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost {
-    onUpdatePost {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          content
-          createdAt
-          updatedAt
-          postCommentsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-      blogPostsId
-    }
-  }
-`;
-export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost {
-    onDeletePost {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          content
-          createdAt
-          updatedAt
-          postCommentsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-      blogPostsId
-    }
-  }
-`;
-export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment {
-    onCreateComment {
-      id
-      post {
-        id
-        title
-        blog {
           id
           name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
           createdAt
           updatedAt
+          userManagingId
+          classTeacherId
         }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        blogPostsId
+        nextToken
       }
-      content
       createdAt
       updatedAt
-      postCommentsId
+      classPendingId
+      classStudentsId
+      userBelongId
     }
   }
 `;
-export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment {
-    onUpdateComment {
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser {
+    onUpdateUser {
       id
-      post {
+      isTeacher
+      name
+      schoolName
+      email
+      image
+      classNum
+      sex
+      age
+      grade
+      school
+      record {
         id
-        title
-        blog {
+        endurance
+        flexibility
+        strength
+        speediness
+        createdAt
+        updatedAt
+      }
+      belong {
+        id
+        teacher {
           id
+          isTeacher
           name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
           createdAt
           updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
         }
-        comments {
+        name
+        school
+        grade
+        endurance
+        flexibility
+        strength
+        speediness
+        pending {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        userManagingId
+        classTeacherId
       }
-      content
+      managing {
+        items {
+          id
+          name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+          userManagingId
+          classTeacherId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      postCommentsId
+      classPendingId
+      classStudentsId
+      userBelongId
     }
   }
 `;
-export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment {
-    onDeleteComment {
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser {
+    onDeleteUser {
       id
-      post {
+      isTeacher
+      name
+      schoolName
+      email
+      image
+      classNum
+      sex
+      age
+      grade
+      school
+      record {
         id
-        title
-        blog {
+        endurance
+        flexibility
+        strength
+        speediness
+        createdAt
+        updatedAt
+      }
+      belong {
+        id
+        teacher {
           id
+          isTeacher
           name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
           createdAt
           updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
         }
-        comments {
+        name
+        school
+        grade
+        endurance
+        flexibility
+        strength
+        speediness
+        pending {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        userManagingId
+        classTeacherId
       }
-      content
+      managing {
+        items {
+          id
+          name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+          userManagingId
+          classTeacherId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      postCommentsId
+      classPendingId
+      classStudentsId
+      userBelongId
+    }
+  }
+`;
+export const onCreateRecord = /* GraphQL */ `
+  subscription OnCreateRecord {
+    onCreateRecord {
+      id
+      endurance
+      flexibility
+      strength
+      speediness
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateRecord = /* GraphQL */ `
+  subscription OnUpdateRecord {
+    onUpdateRecord {
+      id
+      endurance
+      flexibility
+      strength
+      speediness
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteRecord = /* GraphQL */ `
+  subscription OnDeleteRecord {
+    onDeleteRecord {
+      id
+      endurance
+      flexibility
+      strength
+      speediness
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateClass = /* GraphQL */ `
+  subscription OnCreateClass {
+    onCreateClass {
+      id
+      teacher {
+        id
+        isTeacher
+        name
+        schoolName
+        email
+        image
+        classNum
+        sex
+        age
+        grade
+        school
+        record {
+          id
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+        }
+        belong {
+          id
+          name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+          userManagingId
+          classTeacherId
+        }
+        managing {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        classPendingId
+        classStudentsId
+        userBelongId
+      }
+      name
+      school
+      grade
+      endurance
+      flexibility
+      strength
+      speediness
+      pending {
+        items {
+          id
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
+          createdAt
+          updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
+        nextToken
+      }
+      students {
+        items {
+          id
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
+          createdAt
+          updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userManagingId
+      classTeacherId
+    }
+  }
+`;
+export const onUpdateClass = /* GraphQL */ `
+  subscription OnUpdateClass {
+    onUpdateClass {
+      id
+      teacher {
+        id
+        isTeacher
+        name
+        schoolName
+        email
+        image
+        classNum
+        sex
+        age
+        grade
+        school
+        record {
+          id
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+        }
+        belong {
+          id
+          name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+          userManagingId
+          classTeacherId
+        }
+        managing {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        classPendingId
+        classStudentsId
+        userBelongId
+      }
+      name
+      school
+      grade
+      endurance
+      flexibility
+      strength
+      speediness
+      pending {
+        items {
+          id
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
+          createdAt
+          updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
+        nextToken
+      }
+      students {
+        items {
+          id
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
+          createdAt
+          updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userManagingId
+      classTeacherId
+    }
+  }
+`;
+export const onDeleteClass = /* GraphQL */ `
+  subscription OnDeleteClass {
+    onDeleteClass {
+      id
+      teacher {
+        id
+        isTeacher
+        name
+        schoolName
+        email
+        image
+        classNum
+        sex
+        age
+        grade
+        school
+        record {
+          id
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+        }
+        belong {
+          id
+          name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+          userManagingId
+          classTeacherId
+        }
+        managing {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        classPendingId
+        classStudentsId
+        userBelongId
+      }
+      name
+      school
+      grade
+      endurance
+      flexibility
+      strength
+      speediness
+      pending {
+        items {
+          id
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
+          createdAt
+          updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
+        nextToken
+      }
+      students {
+        items {
+          id
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
+          createdAt
+          updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userManagingId
+      classTeacherId
     }
   }
 `;

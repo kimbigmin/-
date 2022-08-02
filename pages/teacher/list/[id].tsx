@@ -55,8 +55,28 @@ const Teacher_ClassPage: NextPage = ({ classData }: any) => {
                         })}
                     </ul>
                 </Nav>
+
                 {clickedNav === 'PAPS 기록' ? (
                     <>
+                        <ColorBar>
+                            <ul>
+                                <li>
+                                    <div className="first"></div>1등급
+                                </li>
+                                <li>
+                                    <div className="second"></div>2등급
+                                </li>
+                                <li>
+                                    <div className="third"></div>3등급
+                                </li>
+                                <li>
+                                    <div className="fourth"></div>4등급
+                                </li>
+                                <li>
+                                    <div className="fifth"></div>5등급
+                                </li>
+                            </ul>
+                        </ColorBar>
                         <Form classData={classData}></Form>
                         <ButtonBox>
                             <Button>저장하기</Button>
@@ -126,7 +146,7 @@ export async function getStaticProps({ params }: any) {
 
 const Nav = styled.nav`
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     ul {
         margin: 0;
         display: flex;
@@ -143,6 +163,53 @@ const Nav = styled.nav`
 
     .selected {
         border-bottom: 3px solid #338a3e;
+    }
+`;
+
+const ColorBar = styled.div`
+    width: 100%;
+    ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 2rem 0rem 2rem;
+    }
+
+    li {
+        display: flex;
+        font-size: 0.7rem;
+        align-items: center;
+    }
+
+    .first {
+        background-color: #178bff;
+        width: 15px;
+        height: 10px;
+        margin-right: 5px;
+    }
+    .second {
+        background-color: #40d43b;
+        width: 15px;
+        height: 10px;
+        margin-right: 5px;
+    }
+    .third {
+        background-color: #e7ee2d;
+        width: 15px;
+        height: 10px;
+        margin-right: 5px;
+    }
+    .fourth {
+        background-color: #ee942d;
+        width: 15px;
+        height: 10px;
+        margin-right: 5px;
+    }
+    .fifth {
+        background-color: #e53838;
+        width: 15px;
+        height: 10px;
+        margin-right: 5px;
     }
 `;
 

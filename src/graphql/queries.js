@@ -1,39 +1,173 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
+      isTeacher
       name
-      posts {
-        items {
+      schoolName
+      email
+      image
+      classNum
+      sex
+      age
+      grade
+      school
+      record {
+        id
+        endurance
+        flexibility
+        strength
+        speediness
+        createdAt
+        updatedAt
+      }
+      belong {
+        id
+        teacher {
           id
-          title
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
           createdAt
           updatedAt
-          blogPostsId
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
+        name
+        school
+        grade
+        endurance
+        flexibility
+        strength
+        speediness
+        pending {
+          nextToken
+        }
+        students {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userManagingId
+        classTeacherId
+      }
+      managing {
+        items {
+          id
+          name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+          userManagingId
+          classTeacherId
         }
         nextToken
       }
       createdAt
       updatedAt
+      classPendingId
+      classStudentsId
+      userBelongId
     }
   }
 `;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        isTeacher
         name
-        posts {
+        schoolName
+        email
+        image
+        classNum
+        sex
+        age
+        grade
+        school
+        record {
+          id
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+        }
+        belong {
+          id
+          name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+          userManagingId
+          classTeacherId
+        }
+        managing {
           nextToken
         }
+        createdAt
+        updatedAt
+        classPendingId
+        classStudentsId
+        userBelongId
+      }
+      nextToken
+    }
+  }
+`;
+export const getRecord = /* GraphQL */ `
+  query GetRecord($id: ID!) {
+    getRecord(id: $id) {
+      id
+      endurance
+      flexibility
+      strength
+      speediness
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listRecords = /* GraphQL */ `
+  query ListRecords(
+    $filter: ModelRecordFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRecords(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        endurance
+        flexibility
+        strength
+        speediness
         createdAt
         updatedAt
       }
@@ -41,110 +175,154 @@ export const listBlogs = /* GraphQL */ `
     }
   }
 `;
-export const getPost = /* GraphQL */ `
-  query GetPost($id: ID!) {
-    getPost(id: $id) {
+export const getClass = /* GraphQL */ `
+  query GetClass($id: ID!) {
+    getClass(id: $id) {
       id
-      title
-      blog {
+      teacher {
         id
+        isTeacher
         name
-        posts {
+        schoolName
+        email
+        image
+        classNum
+        sex
+        age
+        grade
+        school
+        record {
+          id
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+        }
+        belong {
+          id
+          name
+          school
+          grade
+          endurance
+          flexibility
+          strength
+          speediness
+          createdAt
+          updatedAt
+          userManagingId
+          classTeacherId
+        }
+        managing {
           nextToken
         }
         createdAt
         updatedAt
+        classPendingId
+        classStudentsId
+        userBelongId
       }
-      comments {
+      name
+      school
+      grade
+      endurance
+      flexibility
+      strength
+      speediness
+      pending {
         items {
           id
-          content
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
           createdAt
           updatedAt
-          postCommentsId
+          classPendingId
+          classStudentsId
+          userBelongId
+        }
+        nextToken
+      }
+      students {
+        items {
+          id
+          isTeacher
+          name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
+          createdAt
+          updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      userManagingId
+      classTeacherId
     }
   }
 `;
-export const listPosts = /* GraphQL */ `
-  query ListPosts(
-    $filter: ModelPostFilterInput
+export const listClasses = /* GraphQL */ `
+  query ListClasses(
+    $filter: ModelClassFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listClasses(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
-        blog {
+        teacher {
           id
+          isTeacher
           name
+          schoolName
+          email
+          image
+          classNum
+          sex
+          age
+          grade
+          school
           createdAt
           updatedAt
+          classPendingId
+          classStudentsId
+          userBelongId
         }
-        comments {
+        name
+        school
+        grade
+        endurance
+        flexibility
+        strength
+        speediness
+        pending {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
-      }
-      nextToken
-    }
-  }
-`;
-export const getComment = /* GraphQL */ `
-  query GetComment($id: ID!) {
-    getComment(id: $id) {
-      id
-      post {
-        id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        blogPostsId
-      }
-      content
-      createdAt
-      updatedAt
-      postCommentsId
-    }
-  }
-`;
-export const listComments = /* GraphQL */ `
-  query ListComments(
-    $filter: ModelCommentFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        post {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        content
-        createdAt
-        updatedAt
-        postCommentsId
+        userManagingId
+        classTeacherId
       }
       nextToken
     }

@@ -10,7 +10,19 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 interface IClassInfo {
-    [key: string]: string;
+    classId: string;
+    endurance: string;
+    flexibility: string;
+    grade: string;
+    id: string;
+    name: string;
+    number: string;
+    pending: Object[];
+    school: string;
+    speediness: string;
+    strength: string;
+    students: Object[];
+    teacherId: string;
 }
 
 /** 선생님이 관리하고 있는 반 리스트 페이지 (메인 페이지에서 측정 결과 입력 누르면 여기로 이동) **/
