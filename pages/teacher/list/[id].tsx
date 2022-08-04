@@ -182,31 +182,31 @@ const ColorBar = styled.div`
     }
 
     .first {
-        background-color: #178bff;
+        background-color: #178bffb2;
         width: 15px;
         height: 10px;
         margin-right: 5px;
     }
     .second {
-        background-color: #40d43b;
+        background-color: #40d43ba2;
         width: 15px;
         height: 10px;
         margin-right: 5px;
     }
     .third {
-        background-color: #e7ee2d;
+        background-color: #e7ee2d9f;
         width: 15px;
         height: 10px;
         margin-right: 5px;
     }
     .fourth {
-        background-color: #ee942d;
+        background-color: #ee942d97;
         width: 15px;
         height: 10px;
         margin-right: 5px;
     }
     .fifth {
-        background-color: #e53838;
+        background-color: #e53838a4;
         width: 15px;
         height: 10px;
         margin-right: 5px;

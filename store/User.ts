@@ -11,43 +11,57 @@ export const LOG_IN_SUCCESS = 'user/LOG_IN_SUCCESS';
 export const LOG_IN_FAILURE = 'user/LOG_IN_FAILURE';
 
 // actions
-export const getLogIn = createAction<{
-    isLogin: boolean,
-    name: string
-}>(LOG_IN);
+export const getLogIn = createAction(LOG_IN);
 
 export const getLogInSuccess = createAction(LOG_IN_SUCCESS);
 export const getLogInFailure = createAction(LOG_IN_FAILURE);
 
-
 // reducer
-const initialUserState: StoreStateUserType= {
+const initialUserState: StoreStateUserType = {
     isLogin: false,
-    name: ''
-}
+    email: '',
+    createdAt: '',
+    grade: '',
+    id: '',
+    image: '',
+    isTeacher: false,
+    managing: {
+        items: [],
+    },
+    name: '',
+    school: '',
+    schoolName: '',
+    sex: 'man',
+    updatedAt: '',
+};
 
-const userReducer = (state = initialUserState, action: {
-    type: string,
-    payload: any
-}) => {
-    switch(action.type) {
+const userReducer = (
+    state = initialUserState,
+    action: {
+        type: string;
+        payload: any;
+    },
+) => {
+    switch (action.type) {
         case HYDRATE:
             return action.payload;
         case LOG_IN:
             return {
-                ...state
-            }
+                ...state,
+                isLogin: true,
+                ...action.payload.data.getUser,
+            };
         case LOG_IN_SUCCESS:
             return {
-                ...state
-            }
+                ...state,
+            };
         case LOG_IN_FAILURE:
             return {
-                ...state
-            }
+                ...state,
+            };
         default:
             return state;
     }
-}
+};
 
 export default userReducer;

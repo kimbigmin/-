@@ -203,11 +203,11 @@ const Adornment = styled.div`
 `;
 
 const gradeColor = {
-    first: '#178bff7a',
-    second: '#40d43b7b',
-    third: '#e7ee2d81',
-    fourth: '#ee942d90',
-    fifth: '#e538388d',
+    first: '#178bff4b',
+    second: '#40d43b3b',
+    third: '#e7ee2d45',
+    fourth: '#ee942d52',
+    fifth: '#e5383846',
     nothing: '',
 };
 
