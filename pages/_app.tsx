@@ -4,9 +4,9 @@ import { Store } from 'redux';
 import logger from 'redux-logger';
 import type { AppProps } from 'next/app';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import data from '../store/Data';
 import view from '../store/View';
+import user from '../store/User';
 import hp from '../core/Hp';
 import CustomAlert from '../components/Material/CustomAlert';
 import CustomLoading from '../components/Material/CustomLoading';
@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     const rootReducer = combineReducers({
         data,
         view,
+        user,
     });
 
     const store: Store = configureStore({

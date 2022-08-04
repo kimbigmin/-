@@ -128,18 +128,19 @@ const getGradeFromRecord = (
             default:
                 return 'fifth';
         }
-    }
-
-    switch (true) {
-        case (record <= range[0] && record >= range[1]) || record > range[0]:
-            return 'first';
-        case record <= range[2] && record >= range[3]:
-            return 'second';
-        case record <= range[4] && record >= range[5]:
-            return 'third';
-        case record <= range[6] && record >= range[7]:
-            return 'fourth';
-        default:
-            return 'fifth';
+    } else {
+        switch (true) {
+            case (record <= range[0] && record >= range[1]) ||
+                record > range[0]:
+                return 'first';
+            case record <= range[2] && record >= range[3]:
+                return 'second';
+            case record <= range[4] && record >= range[5]:
+                return 'third';
+            case record <= range[6] && record >= range[7]:
+                return 'fourth';
+            default:
+                return 'fifth';
+        }
     }
 };
