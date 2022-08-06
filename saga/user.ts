@@ -4,7 +4,7 @@ import hp from "../core/Hp";
 
 function loginAPI() {
     // 서버로 API 요청
-}
+} 
 
 function* login() {
     try {
