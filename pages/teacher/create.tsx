@@ -10,7 +10,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import axios from 'axios';
+import { API, graphqlOperation } from 'aws-amplify';
+import { createClass } from '../../src/graphql/mutations';
 
 interface IClass {
     name: string;
@@ -50,18 +51,33 @@ const Teacher_CreatePage: NextPage = () => {
         });
     };
 
+    // const handleButton = async () => {
+    //     const newID = Math.random().toString(36).substr(2, 16);
+
+    //     const res = await axios.post(`http://localhost:4000/class`, {
+    //         teacherId: 'park123',
+    //         classId: newID,
+    //         ...selectedItems,
+    //         pending: [],
+    //         students: [],
+    //     });
+
+    // };
+
     const handleButton = async () => {
-        const newID = Math.random().toString(36).substr(2, 16);
-
-        const res = await axios.post(`http://localhost:4000/class`, {
-            teacherId: 'park123',
-            classId: newID,
-            ...selectedItems,
-            pending: [],
-            students: [],
-        });
-
-        window.location.href = 'http://localhost:3000/teacher/list';
+        try {
+            const res = await API.graphql(
+                graphqlOperation(createClass, {
+                    input: {
+                        classTeacherId: 'a06e0753-a012-48d1-bad1-8e6ce1f11d85',
+                        ...selectedItems,
+                    },
+                }),
+            );
+            window.location.href = 'http://localhost:3000/teacher/list';
+        } catch (e) {
+            console.log(e);
+        }
     };
 
     return (

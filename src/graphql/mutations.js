@@ -1,12 +1,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createUser = /* GraphQL */ `
-  mutation CreateUser(
-    $input: CreateUserInput!
-    $condition: ModelUserConditionInput
+export const createStudent = /* GraphQL */ `
+  mutation CreateStudent(
+    $input: CreateStudentInput!
+    $condition: ModelStudentConditionInput
   ) {
-    createUser(input: $input, condition: $condition) {
+    createStudent(input: $input, condition: $condition) {
       id
       isTeacher
       name
@@ -36,66 +36,87 @@ export const createUser = /* GraphQL */ `
           schoolName
           email
           image
-          classNum
           sex
           age
-          grade
           school
+          managing {
+            nextToken
+          }
           createdAt
           updatedAt
-          classPendingId
-          classStudentsId
-          userBelongId
         }
         name
         school
         grade
+        number
         endurance
         flexibility
         strength
         speediness
         pending {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         students {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        userManagingId
+        teacherManagingId
         classTeacherId
-      }
-      managing {
-        items {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
-        nextToken
       }
       createdAt
       updatedAt
       classPendingId
       classStudentsId
-      userBelongId
+      studentRecordId
+      studentBelongId
     }
   }
 `;
-export const updateUser = /* GraphQL */ `
-  mutation UpdateUser(
-    $input: UpdateUserInput!
-    $condition: ModelUserConditionInput
+export const updateStudent = /* GraphQL */ `
+  mutation UpdateStudent(
+    $input: UpdateStudentInput!
+    $condition: ModelStudentConditionInput
   ) {
-    updateUser(input: $input, condition: $condition) {
+    updateStudent(input: $input, condition: $condition) {
       id
       isTeacher
       name
@@ -125,66 +146,87 @@ export const updateUser = /* GraphQL */ `
           schoolName
           email
           image
-          classNum
           sex
           age
-          grade
           school
+          managing {
+            nextToken
+          }
           createdAt
           updatedAt
-          classPendingId
-          classStudentsId
-          userBelongId
         }
         name
         school
         grade
+        number
         endurance
         flexibility
         strength
         speediness
         pending {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         students {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        userManagingId
+        teacherManagingId
         classTeacherId
-      }
-      managing {
-        items {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
-        nextToken
       }
       createdAt
       updatedAt
       classPendingId
       classStudentsId
-      userBelongId
+      studentRecordId
+      studentBelongId
     }
   }
 `;
-export const deleteUser = /* GraphQL */ `
-  mutation DeleteUser(
-    $input: DeleteUserInput!
-    $condition: ModelUserConditionInput
+export const deleteStudent = /* GraphQL */ `
+  mutation DeleteStudent(
+    $input: DeleteStudentInput!
+    $condition: ModelStudentConditionInput
   ) {
-    deleteUser(input: $input, condition: $condition) {
+    deleteStudent(input: $input, condition: $condition) {
       id
       isTeacher
       name
@@ -214,57 +256,249 @@ export const deleteUser = /* GraphQL */ `
           schoolName
           email
           image
-          classNum
           sex
           age
-          grade
           school
+          managing {
+            nextToken
+          }
           createdAt
           updatedAt
-          classPendingId
-          classStudentsId
-          userBelongId
         }
         name
         school
         grade
+        number
         endurance
         flexibility
         strength
         speediness
         pending {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         students {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        userManagingId
+        teacherManagingId
         classTeacherId
       }
+      createdAt
+      updatedAt
+      classPendingId
+      classStudentsId
+      studentRecordId
+      studentBelongId
+    }
+  }
+`;
+export const createTeacher = /* GraphQL */ `
+  mutation CreateTeacher(
+    $input: CreateTeacherInput!
+    $condition: ModelTeacherConditionInput
+  ) {
+    createTeacher(input: $input, condition: $condition) {
+      id
+      isTeacher
+      name
+      schoolName
+      email
+      image
+      sex
+      age
+      school
       managing {
         items {
           id
+          teacher {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            sex
+            age
+            school
+            createdAt
+            updatedAt
+          }
           name
           school
           grade
+          number
           endurance
           flexibility
           strength
           speediness
+          pending {
+            nextToken
+          }
+          students {
+            nextToken
+          }
           createdAt
           updatedAt
-          userManagingId
+          teacherManagingId
           classTeacherId
         }
         nextToken
       }
       createdAt
       updatedAt
-      classPendingId
-      classStudentsId
-      userBelongId
+    }
+  }
+`;
+export const updateTeacher = /* GraphQL */ `
+  mutation UpdateTeacher(
+    $input: UpdateTeacherInput!
+    $condition: ModelTeacherConditionInput
+  ) {
+    updateTeacher(input: $input, condition: $condition) {
+      id
+      isTeacher
+      name
+      schoolName
+      email
+      image
+      sex
+      age
+      school
+      managing {
+        items {
+          id
+          teacher {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            sex
+            age
+            school
+            createdAt
+            updatedAt
+          }
+          name
+          school
+          grade
+          number
+          endurance
+          flexibility
+          strength
+          speediness
+          pending {
+            nextToken
+          }
+          students {
+            nextToken
+          }
+          createdAt
+          updatedAt
+          teacherManagingId
+          classTeacherId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteTeacher = /* GraphQL */ `
+  mutation DeleteTeacher(
+    $input: DeleteTeacherInput!
+    $condition: ModelTeacherConditionInput
+  ) {
+    deleteTeacher(input: $input, condition: $condition) {
+      id
+      isTeacher
+      name
+      schoolName
+      email
+      image
+      sex
+      age
+      school
+      managing {
+        items {
+          id
+          teacher {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            sex
+            age
+            school
+            createdAt
+            updatedAt
+          }
+          name
+          school
+          grade
+          number
+          endurance
+          flexibility
+          strength
+          speediness
+          pending {
+            nextToken
+          }
+          students {
+            nextToken
+          }
+          createdAt
+          updatedAt
+          teacherManagingId
+          classTeacherId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -330,46 +564,34 @@ export const createClass = /* GraphQL */ `
         schoolName
         email
         image
-        classNum
         sex
         age
-        grade
         school
-        record {
-          id
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-        }
-        belong {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
         managing {
+          items {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        classPendingId
-        classStudentsId
-        userBelongId
       }
       name
       school
       grade
+      number
       endurance
       flexibility
       strength
@@ -387,11 +609,36 @@ export const createClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
@@ -408,17 +655,42 @@ export const createClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
       createdAt
       updatedAt
-      userManagingId
+      teacherManagingId
       classTeacherId
     }
   }
@@ -437,46 +709,34 @@ export const updateClass = /* GraphQL */ `
         schoolName
         email
         image
-        classNum
         sex
         age
-        grade
         school
-        record {
-          id
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-        }
-        belong {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
         managing {
+          items {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        classPendingId
-        classStudentsId
-        userBelongId
       }
       name
       school
       grade
+      number
       endurance
       flexibility
       strength
@@ -494,11 +754,36 @@ export const updateClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
@@ -515,17 +800,42 @@ export const updateClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
       createdAt
       updatedAt
-      userManagingId
+      teacherManagingId
       classTeacherId
     }
   }
@@ -544,46 +854,34 @@ export const deleteClass = /* GraphQL */ `
         schoolName
         email
         image
-        classNum
         sex
         age
-        grade
         school
-        record {
-          id
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-        }
-        belong {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
         managing {
+          items {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        classPendingId
-        classStudentsId
-        userBelongId
       }
       name
       school
       grade
+      number
       endurance
       flexibility
       strength
@@ -601,11 +899,36 @@ export const deleteClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
@@ -622,17 +945,42 @@ export const deleteClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
       createdAt
       updatedAt
-      userManagingId
+      teacherManagingId
       classTeacherId
     }
   }

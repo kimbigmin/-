@@ -1,5 +1,5 @@
 projects:
-  healthpaps:
+  healthpaps-dev:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
@@ -10,6 +10,9 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
+        region: ap-northeast-2
+        apiId: zoteckijd5blhepddwjj3prqc4
+        maxDepth: 4
 extensions:
   amplify:
     version: 3
