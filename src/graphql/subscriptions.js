@@ -1,9 +1,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser {
-    onCreateUser {
+export const onCreateStudent = /* GraphQL */ `
+  subscription OnCreateStudent {
+    onCreateStudent {
       id
       isTeacher
       name
@@ -33,63 +33,84 @@ export const onCreateUser = /* GraphQL */ `
           schoolName
           email
           image
-          classNum
           sex
           age
-          grade
           school
+          managing {
+            nextToken
+          }
           createdAt
           updatedAt
-          classPendingId
-          classStudentsId
-          userBelongId
         }
         name
         school
         grade
+        number
         endurance
         flexibility
         strength
         speediness
         pending {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         students {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        userManagingId
+        teacherManagingId
         classTeacherId
-      }
-      managing {
-        items {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
-        nextToken
       }
       createdAt
       updatedAt
       classPendingId
       classStudentsId
-      userBelongId
+      studentRecordId
+      studentBelongId
     }
   }
 `;
-export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser {
-    onUpdateUser {
+export const onUpdateStudent = /* GraphQL */ `
+  subscription OnUpdateStudent {
+    onUpdateStudent {
       id
       isTeacher
       name
@@ -119,63 +140,84 @@ export const onUpdateUser = /* GraphQL */ `
           schoolName
           email
           image
-          classNum
           sex
           age
-          grade
           school
+          managing {
+            nextToken
+          }
           createdAt
           updatedAt
-          classPendingId
-          classStudentsId
-          userBelongId
         }
         name
         school
         grade
+        number
         endurance
         flexibility
         strength
         speediness
         pending {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         students {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        userManagingId
+        teacherManagingId
         classTeacherId
-      }
-      managing {
-        items {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
-        nextToken
       }
       createdAt
       updatedAt
       classPendingId
       classStudentsId
-      userBelongId
+      studentRecordId
+      studentBelongId
     }
   }
 `;
-export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser {
-    onDeleteUser {
+export const onDeleteStudent = /* GraphQL */ `
+  subscription OnDeleteStudent {
+    onDeleteStudent {
       id
       isTeacher
       name
@@ -205,57 +247,240 @@ export const onDeleteUser = /* GraphQL */ `
           schoolName
           email
           image
-          classNum
           sex
           age
-          grade
           school
+          managing {
+            nextToken
+          }
           createdAt
           updatedAt
-          classPendingId
-          classStudentsId
-          userBelongId
         }
         name
         school
         grade
+        number
         endurance
         flexibility
         strength
         speediness
         pending {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         students {
+          items {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            classNum
+            sex
+            age
+            grade
+            school
+            createdAt
+            updatedAt
+            classPendingId
+            classStudentsId
+            studentRecordId
+            studentBelongId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        userManagingId
+        teacherManagingId
         classTeacherId
       }
+      createdAt
+      updatedAt
+      classPendingId
+      classStudentsId
+      studentRecordId
+      studentBelongId
+    }
+  }
+`;
+export const onCreateTeacher = /* GraphQL */ `
+  subscription OnCreateTeacher {
+    onCreateTeacher {
+      id
+      isTeacher
+      name
+      schoolName
+      email
+      image
+      sex
+      age
+      school
       managing {
         items {
           id
+          teacher {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            sex
+            age
+            school
+            createdAt
+            updatedAt
+          }
           name
           school
           grade
+          number
           endurance
           flexibility
           strength
           speediness
+          pending {
+            nextToken
+          }
+          students {
+            nextToken
+          }
           createdAt
           updatedAt
-          userManagingId
+          teacherManagingId
           classTeacherId
         }
         nextToken
       }
       createdAt
       updatedAt
-      classPendingId
-      classStudentsId
-      userBelongId
+    }
+  }
+`;
+export const onUpdateTeacher = /* GraphQL */ `
+  subscription OnUpdateTeacher {
+    onUpdateTeacher {
+      id
+      isTeacher
+      name
+      schoolName
+      email
+      image
+      sex
+      age
+      school
+      managing {
+        items {
+          id
+          teacher {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            sex
+            age
+            school
+            createdAt
+            updatedAt
+          }
+          name
+          school
+          grade
+          number
+          endurance
+          flexibility
+          strength
+          speediness
+          pending {
+            nextToken
+          }
+          students {
+            nextToken
+          }
+          createdAt
+          updatedAt
+          teacherManagingId
+          classTeacherId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteTeacher = /* GraphQL */ `
+  subscription OnDeleteTeacher {
+    onDeleteTeacher {
+      id
+      isTeacher
+      name
+      schoolName
+      email
+      image
+      sex
+      age
+      school
+      managing {
+        items {
+          id
+          teacher {
+            id
+            isTeacher
+            name
+            schoolName
+            email
+            image
+            sex
+            age
+            school
+            createdAt
+            updatedAt
+          }
+          name
+          school
+          grade
+          number
+          endurance
+          flexibility
+          strength
+          speediness
+          pending {
+            nextToken
+          }
+          students {
+            nextToken
+          }
+          createdAt
+          updatedAt
+          teacherManagingId
+          classTeacherId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -309,46 +534,34 @@ export const onCreateClass = /* GraphQL */ `
         schoolName
         email
         image
-        classNum
         sex
         age
-        grade
         school
-        record {
-          id
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-        }
-        belong {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
         managing {
+          items {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        classPendingId
-        classStudentsId
-        userBelongId
       }
       name
       school
       grade
+      number
       endurance
       flexibility
       strength
@@ -366,11 +579,36 @@ export const onCreateClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
@@ -387,17 +625,42 @@ export const onCreateClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
       createdAt
       updatedAt
-      userManagingId
+      teacherManagingId
       classTeacherId
     }
   }
@@ -413,46 +676,34 @@ export const onUpdateClass = /* GraphQL */ `
         schoolName
         email
         image
-        classNum
         sex
         age
-        grade
         school
-        record {
-          id
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-        }
-        belong {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
         managing {
+          items {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        classPendingId
-        classStudentsId
-        userBelongId
       }
       name
       school
       grade
+      number
       endurance
       flexibility
       strength
@@ -470,11 +721,36 @@ export const onUpdateClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
@@ -491,17 +767,42 @@ export const onUpdateClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
       createdAt
       updatedAt
-      userManagingId
+      teacherManagingId
       classTeacherId
     }
   }
@@ -517,46 +818,34 @@ export const onDeleteClass = /* GraphQL */ `
         schoolName
         email
         image
-        classNum
         sex
         age
-        grade
         school
-        record {
-          id
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-        }
-        belong {
-          id
-          name
-          school
-          grade
-          endurance
-          flexibility
-          strength
-          speediness
-          createdAt
-          updatedAt
-          userManagingId
-          classTeacherId
-        }
         managing {
+          items {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           nextToken
         }
         createdAt
         updatedAt
-        classPendingId
-        classStudentsId
-        userBelongId
       }
       name
       school
       grade
+      number
       endurance
       flexibility
       strength
@@ -574,11 +863,36 @@ export const onDeleteClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
@@ -595,17 +909,42 @@ export const onDeleteClass = /* GraphQL */ `
           age
           grade
           school
+          record {
+            id
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+          }
+          belong {
+            id
+            name
+            school
+            grade
+            number
+            endurance
+            flexibility
+            strength
+            speediness
+            createdAt
+            updatedAt
+            teacherManagingId
+            classTeacherId
+          }
           createdAt
           updatedAt
           classPendingId
           classStudentsId
-          userBelongId
+          studentRecordId
+          studentBelongId
         }
         nextToken
       }
       createdAt
       updatedAt
-      userManagingId
+      teacherManagingId
       classTeacherId
     }
   }

@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
-import { StoreStateUserType } from '../types/store';
-import Utils from '../core/Utils';
+import { StoreStateUserType } from '../../types/store';
+import Utils from '../../core/Utils';
 
 // 로그인은서버 추가시 업데이트
 
