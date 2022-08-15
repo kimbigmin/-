@@ -5,7 +5,7 @@ import { Card, CardBox } from '../../styles/Card';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { API, graphqlOperation } from 'aws-amplify';
-import { getUser } from '../../src/graphql/queries';
+import { getStudent } from '../../src/graphql/queries';
 import userReducer from '../../store/User';
 import { getLogIn } from '../../store/User';
 import { useDispatch } from 'react-redux';
@@ -17,8 +17,8 @@ const Student_MainPage: NextPage = () => {
     const fetchUser = async () => {
         try {
             const result = await API.graphql(
-                graphqlOperation(getUser, {
-                    id: '0651861c-38f7-4554-9a7a-139e56154802',
+                graphqlOperation(getStudent, {
+                    id: '980241b2-12c1-4c62-9913-356797410a3d',
                 }),
             );
             dispatch({ type: 'user/LOGIN', payload: result });
