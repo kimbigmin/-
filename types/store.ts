@@ -45,6 +45,7 @@ export type ShowAlertOptionType = {
     title: string;
     confirm: string;
     color: 'error' | 'info' | 'success' | 'warning';
+    compFunc: Function;
     callbackFunc: Function;
 };
 

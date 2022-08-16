@@ -31,6 +31,7 @@ const initAlertOptions: ShowAlertOptionType = {
     title: '',
     confirm: '확인',
     color: 'success',
+    compFunc: ()=>{},
     callbackFunc: ()=>{}
 }
 
@@ -61,6 +62,7 @@ const viewReducer = (state = initialViewState, action:{
                 title: (alertParam && alertParam.title) || '',
                 confirm: (alertParam && alertParam.confirm) || '확인',
                 color: (alertParam && alertParam.color) || 'success',
+                compFunc: (alertParam && alertParam.compFunc) || (() => {}),
                 callbackFunc: (alertParam && alertParam.callbackFunc) || (() => {})
             }
             return {
