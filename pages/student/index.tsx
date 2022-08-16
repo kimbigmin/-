@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getStudent } from '../../src/graphql/queries';
-import userReducer from '../../store/User';
-import { getLogIn } from '../../store/User';
+import userReducer from '../../store/user/User';
+import { getLogIn } from '../../store/user/User';
 import { useDispatch } from 'react-redux';
 
 /** 학생 로그인 후 학생 메인 페이지 **/
