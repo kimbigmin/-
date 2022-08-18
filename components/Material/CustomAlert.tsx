@@ -4,6 +4,7 @@ import hp from '../../core/Hp';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { StoreStateType } from '../../types/store';
 
 // ㅇㅣ쁘게 디자인 하면 이뻐질듯
@@ -55,7 +56,15 @@ function CustomAlert() {
                     <p id="parent-modal-description">
                         {showAlertMessage}
                     </p>
-
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="Email Address"
+                        type="email"
+                        fullWidth
+                        variant="standard"
+                    />
                     <Button sx={btnStyle} ref={refBtn} onClick={() => {
                         hp.alert('hide');
                         if (showAlertOptions?.callbackFunc) showAlertOptions.callbackFunc();
