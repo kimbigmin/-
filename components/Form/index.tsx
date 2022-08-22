@@ -125,8 +125,6 @@ const Form = ({ classData }: FormProps) => {
 
     const [studentsList, setStudentList] = useState(initialState);
 
-    console.log(studentsList);
-
     // 번호와 이름으로 구성된 고정된 테이블 => useMemo로 불필요한 리렌더링 방지
     const fixedTable = useMemo(() => {
         return Array(+classData.number)

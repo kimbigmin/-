@@ -29,24 +29,9 @@ interface ClassInfo {
 /** 선생님이 관리하고 있는 반 리스트 페이지 (메인 페이지에서 측정 결과 입력 누르면 여기로 이동) **/
 const Teacher_ListPage: NextPage = () => {
     // 관리하고 있는 학급 목록
-    const user = useSelector<any>(state => state);
-
-    console.log(user);
+    const user = useSelector<any>(state => state.user);
 
     const [classList, setClassList] = useState<ClassInfo[] | undefined>();
-
-    // DB에서 모든 class 리스트 불러와서 선생님이 관리하는 학급만 필터링 후 classList에 할당 => 나중에 서버에서 필터링해서 redux로 관리할 듯...
-    useEffect(() => {
-        const getClassList = async () => {
-            const res = await axios.get(`http://localhost:4000/class`);
-
-            const classList = res.data.filter(
-                (el: any) => el.teacherId === 'park123',
-            );
-            setClassList(classList);
-        };
-        getClassList();
-    }, []);
 
     // 관리하고 있는 학급 리스트 생성하는 함수
     const createClassList = () => {

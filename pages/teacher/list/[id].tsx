@@ -11,11 +11,8 @@ import StudentManage from '../../../components/StudentManage';
 import axios from 'axios';
 
 /** 학급 페이지 **/
-
 const Teacher_ClassPage: NextPage = ({ classData }: any) => {
     // 렌더링 시범용 학생수
-    console.log(classData);
-
     const [clickedNav, setClickedNav] = useState('PAPS 기록');
 
     const navbar = ['PAPS 기록', '가입 요청', '학생 관리'];
@@ -118,7 +115,7 @@ const getAllClassId = async () => {
 // 학급 id를 통해 해당 학급 데이터 불러오는 함수
 const getClassData = async (id: string) => {
     const res = await axios.get(`http://localhost:4000/class/${id}`);
-    console.log(res);
+
     return {
         id,
         ...res.data,
@@ -128,7 +125,6 @@ const getClassData = async (id: string) => {
 // 다이나믹 라우트를 통해 페이지 생성하기 위해 path 가져오기
 export async function getStaticPaths() {
     const paths = await getAllClassId();
-    console.log(paths);
     return {
         paths,
         fallback: false,
