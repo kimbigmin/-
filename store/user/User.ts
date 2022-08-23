@@ -1,67 +1,47 @@
-import { createAction } from '@reduxjs/toolkit';
+import { createAction, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
-import { StoreStateUserType } from '../../types/store';
-import Utils from '../../core/Utils';
+import { StoreStateUserInitialState } from '../../types/store';
+import { AppState } from '../store';
 
 // 로그인은서버 추가시 업데이트
-
-// types
-export const LOG_IN = 'user/LOGIN';
-export const LOG_IN_SUCCESS = 'user/LOG_IN_SUCCESS';
-export const LOG_IN_FAILURE = 'user/LOG_IN_FAILURE';
-
-// actions
-export const getLogIn = createAction(LOG_IN);
-
-export const getLogInSuccess = createAction(LOG_IN_SUCCESS);
-export const getLogInFailure = createAction(LOG_IN_FAILURE);
-
-// reducer
-const initialUserState: StoreStateUserType = {
-    isLogin: false,
-    email: '',
-    createdAt: '',
-    grade: '',
-    id: '',
-    image: '',
-    isTeacher: false,
-    managing: {
-        items: [],
-    },
-    name: '',
-    school: '',
-    schoolName: '',
-    sex: 'man',
-    updatedAt: '',
+const initialState: StoreStateUserInitialState = {
+    user: null,
+    isLoading: false,
+    getUserDone: null,
+    getUserError: null,
 };
 
-const userReducer = (
-    state = initialUserState,
-    action: {
-        type: string;
-        payload: any;
+export const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers: {
+        userLogin(state, action) {
+            state.isLoading = true;
+            state.getUserDone = null;
+            state.getUserError = null;
+        },
+        userLoginSuccess(state, action) {
+            state.isLoading = false;
+            state.getUserDone = action.payload.data.message;
+            state.user = action.payload.data.getTeacher;
+        },
+        userLoginFailure(state, action) {
+            state.isLoading = false;
+            state.getUserError = action.payload.data.message;
+        },
     },
-) => {
-    switch (action.type) {
-        case HYDRATE:
-            return action.payload;
-        case LOG_IN:
+    extraReducers: {
+        [HYDRATE]: (state, action) => {
             return {
                 ...state,
-                isLogin: true,
-                ...action.payload.data.getUser,
+                ...action.payload.data.getTeacher,
             };
-        case LOG_IN_SUCCESS:
-            return {
-                ...state,
-            };
-        case LOG_IN_FAILURE:
-            return {
-                ...state,
-            };
-        default:
-            return state;
-    }
-};
+        },
+    },
+});
 
-export default userReducer;
+export const { userLogin, userLoginFailure, userLoginSuccess } =
+    userSlice.actions;
+export const selectUserState = (state: AppState) => state.user;
+export default userSlice.reducer;

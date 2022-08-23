@@ -3,32 +3,17 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Card, CardBox } from '../../styles/Card';
 import { useDispatch } from 'react-redux';
-import { API, graphqlOperation } from 'aws-amplify';
-import { getTeacher } from '../../src/graphql/queries';
 import { useEffect } from 'react';
+import { userLogin } from '../../store/user/User';
 
 /** 선생님 로그인 후 메인 페이지 **/
 const Teacher_MainPage: NextPage = () => {
     const dispatch = useDispatch();
 
     // 선생님 정보 불러오는 fetch함수
-    const fetchUser = async () => {
-        try {
-            const result = await API.graphql(
-                graphqlOperation(getTeacher, {
-                    id: '81088960-f3bb-4059-8d43-17dd0fed519c',
-                }),
-            );
-            dispatch({ type: 'user/LOGIN', payload: result });
-        } catch (err) {
-            throw new Error(`로그인 정보를 불러 올 수 없습니다. : ${err}`);
-        }
-    };
-
-    // 선생님 로그인 (임시)
     useEffect(() => {
-        fetchUser();
-    }, []);
+        dispatch(userLogin);
+    });
 
     return (
         <>
