@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getStudent } from '../../src/graphql/queries';
 import userReducer from '../../store/user/User';
-import { getLogIn } from '../../store/user/User';
 import { useDispatch } from 'react-redux';
 
 /** 학생 로그인 후 학생 메인 페이지 **/
@@ -37,7 +36,12 @@ const Student_MainPage: NextPage = () => {
                 <CardBox>
                     <Link href="/student/result">
                         {/** url은 나중에 이미지 public에 저장해서 경로 사용 **/}
-                        <Card url="https://images.unsplash.com/photo-1584415942461-0b87dda9cc2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                        <Card
+                            url="https://images.unsplash.com/photo-1584415942461-0b87dda9cc2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+                            onClick={() => {
+                                // 2차 비밀번호 입력
+                            }}
+                        >
                             <h2>PAPS 측정 결과</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
