@@ -3,10 +3,13 @@ import { userSlice } from './user/User';
 import { createWrapper } from 'next-redux-wrapper';
 import logger from 'redux-logger';
 import data from '../store/Data';
+import createSagaMiddleware from '@redux-saga/core';
 import view from '../store/View';
+import userSaga from './user/userSaga';
 
-const makeStore = () =>
-    configureStore({
+const createStore = () => {
+    const sagaMiddleware = createSagaMiddleware();
+    const store = configureStore({
         reducer: {
             [userSlice.name]: userSlice.reducer,
             data,
@@ -15,10 +18,14 @@ const makeStore = () =>
         middleware: getDefaultMiddleware =>
             getDefaultMiddleware({
                 serializableCheck: false,
-            }).concat(logger),
+            }).concat(sagaMiddleware, logger),
     });
+    store.sagaTask = sagaMiddleware.run(userSaga);
 
-export type AppStore = ReturnType<typeof makeStore>;
+    return store;
+};
+
+export type AppStore = ReturnType<typeof createStore>;
 export type AppState = ReturnType<AppStore['getState']>;
 export type AppThunk<ReturnType = void> = ThunkAction<
     ReturnType,
@@ -27,4 +34,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
     Action
 >;
 
-export const wrapper = createWrapper<AppStore>(makeStore);
+export const wrapper = createWrapper<AppStore>(createStore);

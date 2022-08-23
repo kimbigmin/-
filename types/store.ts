@@ -34,6 +34,13 @@ export type StoreStateUserType = {
     belong?: any;
 };
 
+export type StoreStateUserInitialState = {
+    user: StoreStateUserType | null;
+    isLoading: boolean;
+    getUserDone: null | string;
+    getUserError: null | string;
+};
+
 export type StoreStateType = {
     data: StoreStateDataType;
     view: StoreStateViewType;
