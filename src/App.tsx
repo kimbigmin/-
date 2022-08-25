@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './pages/login';
+import TeacherPage from './pages/teacher';
+import StudentPage from './pages/student';
+import Header from '../src/components/Header';
+import TeacherClassListPage from './pages/teacher/list';
+import TeacherCreateClassPage from './pages/teacher/create';
+import ClassPage from './pages/teacher/list/Class';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const isLogin = true;
+    return (
+        <>
+            {isLogin ? <Header /> : null}
+            <Router>
+                <Routes>
+                    <Route path="/" element={<LoginPage />}></Route>
+                    <Route path="/student" element={<StudentPage />}></Route>
+                    <Route path="/teacher" element={<TeacherPage />}></Route>
+                    <Route
+                        path="/teacher/list"
+                        element={<TeacherClassListPage />}
+                    ></Route>
+                    <Route
+                        path="/teacher/create"
+                        element={<TeacherCreateClassPage />}
+                    ></Route>
+                    <Route
+                        path="/teacher/list/:id"
+                        element={<ClassPage />}
+                    ></Route>
+                </Routes>
+            </Router>
+        </>
+    );
 }
 
 export default App;
