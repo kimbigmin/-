@@ -114,7 +114,7 @@ const initialState = [
     },
 ];
 
-const Form = () => {
+function Form() {
     // 학급마다 측정 리스트(paps 리스트)가 달라짐 => 데이터 받아와서 해당 학급 측정 리스트로 렌더링
     const { id } = useParams();
     const managing = useSelector(
@@ -271,12 +271,12 @@ const Form = () => {
             </MovedCol>
         </FormContainer>
     );
-};
+}
 
 const FormContainer = styled.form`
     scrollbar-width: none;
     display: flex;
-    width: 100%;
+    width: 112%;
     max-width: 1000rem;
     overflow: scroll;
     margin-bottom: 2rem;
@@ -294,7 +294,8 @@ const FixedCol = styled.div`
     }
 
     th {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        font-weight: 600;
     }
 
     tr {
@@ -305,20 +306,19 @@ const FixedCol = styled.div`
     }
 
     .num {
-        width: 30%;
+        width: 20%;
     }
 
     .name {
-        width: 40%;
+        width: 30%;
     }
 `;
 
 const MovedCol = styled.div`
     width: 100%;
-
     table {
         overflow: scroll;
-        width: 250%;
+        width: 300%;
     }
 
     tr {
@@ -329,7 +329,8 @@ const MovedCol = styled.div`
     }
 
     th {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        font-weight: 600;
         position: sticky;
         top: 0;
     }
