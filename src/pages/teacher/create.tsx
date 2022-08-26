@@ -9,6 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { API, graphqlOperation } from 'aws-amplify';
 import { createClass } from '../../graphql/mutations';
+import { useNavigate } from 'react-router-dom';
 
 interface IClass {
     name: string;
@@ -45,7 +46,7 @@ const Teacher_CreatePage = () => {
             };
         });
     };
-
+    const navigate = useNavigate();
     const handleButton = async () => {
         try {
             const res = await API.graphql(
@@ -59,6 +60,7 @@ const Teacher_CreatePage = () => {
                 }),
             );
             console.log(res);
+            navigate('/teacher/list');
         } catch (e) {
             console.log(e);
         }
