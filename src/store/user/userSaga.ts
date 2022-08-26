@@ -23,7 +23,6 @@ function* login(action: PayloadAction<string>) {
     try {
         // loginAPI 함수 실행
         const response: any[] = yield call(loginAPI, params);
-        console.log(response);
         // LOG_IN_SUCCESS dispatch
         yield put(userLoginSuccess(response));
     } catch (e) {
