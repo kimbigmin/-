@@ -29,7 +29,7 @@ const Teacher_ClassPage = () => {
 
     return (
         <>
-            <Layout style={{ overflow: 'scroll' }}>
+            <Layout style={{ overflow: 'hidden' }}>
                 <TopBar>
                     <h2>{`${classData.name} 페이지`}</h2>
                 </TopBar>
@@ -87,11 +87,9 @@ const Teacher_ClassPage = () => {
                         </ButtonBox>
                     </>
                 ) : clickedNav === '가입 요청' ? (
-                    <Register pending={classData.pending}></Register>
+                    <Register pending={[]}></Register>
                 ) : (
-                    <StudentManage
-                        students={classData.students}
-                    ></StudentManage>
+                    <StudentManage students={[]}></StudentManage>
                 )}
             </Layout>
         </>
