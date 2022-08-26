@@ -180,6 +180,8 @@ function CustomTextField({
             sx={{
                 backgroundColor: gradeColor[grade],
                 borderRadius: '5px',
+                marginLeft: '0.2rem',
+                marginRight: '0.2rem',
             }}
             color={isErrorMsg ? 'error' : 'success'} // 에러 발생시 색깔 변경
             label={handleLabel()} // 라벨 변경해서 에러 표시
@@ -199,7 +201,7 @@ function CustomTextField({
 
 const Adornment = styled.div`
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 700;
 `;
 
 const gradeColor = {
