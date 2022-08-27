@@ -1,7 +1,7 @@
 import { Card, CardBox } from '../../styles/Card';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { userLogin } from '../../store/user/User';
+import { userLogin } from '../../store/user/userSlice';
 import { Link } from 'react-router-dom';
 
 /** 선생님 로그인 후 메인 페이지 **/

@@ -3,7 +3,7 @@ import hp from '../../core/Hp';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getTeacher } from '../../graphql/queries';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { userLogin, userLoginSuccess, userLoginFailure } from './User';
+import { userLogin, userLoginSuccess, userLoginFailure } from './userSlice';
 
 const loginAPI = async (id = '81088960-f3bb-4059-8d43-17dd0fed519c') => {
     try {

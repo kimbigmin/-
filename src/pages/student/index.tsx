@@ -2,7 +2,7 @@ import { Card, CardBox } from '../../styles/Card';
 import { useEffect } from 'react';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getStudent } from '../../graphql/queries';
-import userReducer from '../../store/user/User';
+import userReducer from '../../store/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
