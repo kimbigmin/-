@@ -5,9 +5,9 @@ import { useState, useCallback, useEffect } from 'react';
 import Form from '../../../components/Form';
 import Register from '../../../components/Register';
 import StudentManage from '../../../components/StudentManage';
-import axios from 'axios';
 import { useLocation, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getData } from '../../../store/class/classSlice';
 
 /** 학급 페이지 **/
 const Teacher_ClassPage = () => {
@@ -16,15 +16,19 @@ const Teacher_ClassPage = () => {
     const [clickedNav, setClickedNav] = useState('PAPS 기록');
     const navbar = ['PAPS 기록', '가입 요청', '학생 관리'];
 
-    const managing = useSelector(
-        (state: any) => state.user.user.managing.items,
-    );
+    const classData = useSelector((state: any) => state.class);
 
-    const classData = managing.filter((el: any) => id === el.id)[0];
     console.log(classData);
 
     const handleNavbar = useCallback((e: any) => {
         setClickedNav(e.target.innerText);
+    }, []);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(
+            getData({ id: '8f472b3c-88d5-4b8b-80bd-af1bcc263737', num: 5 }),
+        );
     }, []);
 
     return (
